@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.home.ui.fragment.HomeFragment"
+        app:defaultNavHost="true"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_dest_to_actor_detail_dest"
+            app:destination="@id/actor_detail_dest" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/actor_detail_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.actordetail.ui.fragment.ActorDetailFragment"
+        tools:layout="@layout/fragment_actor_detail">
+
+        <argument
+            android:name="actorId"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quotes_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.quotes.ui.fragment.QuotesContainerFragment"
+        tools:layout="@layout/fragment_view_pager_container" />
+
+    <fragment
+        android:id="@+id/deaths_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.deaths.ui.fragment.DeathsFragment"
+        tools:layout="@layout/fragment_deaths" />
+
+    <fragment
+        android:id="@+id/episodes_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.episodes.ui.fragment.EpisodesContainerFragment"
+        tools:layout="@layout/fragment_view_pager_container" />
+
+    <fragment
+        android:id="@+id/player_dest"
+        android:name="com.harismexis.breakingbad.presentation.screens.player.PlayerFragment"
+        tools:layout="@layout/fragment_player">
+
+        <action
+            android:id="@+id/action_exit"
+            app:popUpTo="@+id/home_dest" />
+
+    </fragment>
+
+</navigation>

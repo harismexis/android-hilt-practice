@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vh_item_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/vh_quote_padding_horizontal"
+    android:paddingTop="@dimen/vh_quote_padding_vertical"
+    android:paddingEnd="@dimen/vh_quote_padding_horizontal"
+    android:paddingBottom="@dimen/vh_quote_padding_vertical">
+
+    <TextView
+        android:id="@+id/txt_victim_label"
+        style="@style/VhBaseMeta"
+        android:text="@string/label_death_victim"
+        android:textColor="@color/light_green_six"
+        tools:text="Victim label" />
+
+    <TextView
+        android:id="@+id/txt_death"
+        style="@style/VhItemTitle"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        tools:text="Victim" />
+
+    <TextView
+        android:id="@+id/txt_cause_label"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_death_label_margin_top"
+        android:text="@string/label_death_cause"
+        android:textColor="@color/light_green_six"
+        tools:text="Cause label" />
+
+    <TextView
+        android:id="@+id/txt_cause"
+        style="@style/VhItemMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        tools:text="Cause" />
+
+    <TextView
+        android:id="@+id/txt_responsible_label"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_death_label_margin_top"
+        android:text="@string/label_death_responsible"
+        android:textColor="@color/light_green_six"
+        tools:text="Responsible label" />
+
+    <TextView
+        android:id="@+id/txt_responsible"
+        style="@style/VhItemMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        tools:text="Responsible" />
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vh_item_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/vh_quote_padding_horizontal"
+    android:paddingTop="@dimen/vh_quote_padding_vertical"
+    android:paddingEnd="@dimen/vh_quote_padding_horizontal"
+    android:paddingBottom="@dimen/vh_quote_padding_vertical">
+
+    <TextView
+        android:id="@+id/txt_quote"
+        style="@style/VhItemTitle"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Quote" />
+
+    <TextView
+        android:id="@+id/txt_author_label"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        android:text="@string/label_quote_author"
+        android:textColor="@color/light_green_six"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_quote"
+        tools:text="Author" />
+
+    <TextView
+        android:id="@+id/txt_author"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_author_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/txt_author_label"
+        tools:text="Author" />
+
+    <TextView
+        android:id="@+id/txt_series_label"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        android:text="@string/label_quote_in_series"
+        android:textColor="@color/light_green_six"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_author_label"
+        tools:text="Series" />
+
+    <TextView
+        android:id="@+id/txt_series"
+        style="@style/VhBaseMeta"
+        android:layout_marginTop="@dimen/vh_item_txt_meta_margin_top"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_series_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/txt_series_label"
+        tools:text="Series" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
