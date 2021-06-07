@@ -15,15 +15,13 @@ fun List<LocalActor?>?.toItems(): List<Actor> {
 
 fun LocalActor.toItem(): Actor {
     return Actor(
-        this.actorId,
+        this.id,
         this.name,
-        this.birthday,
-        this.occupation,
-        this.img,
         this.status,
-        this.nickname,
-        this.portrayed,
-        this.category
+        this.species,
+        this.type,
+        this.gender,
+        this.image
     )
 }
 
@@ -39,14 +37,12 @@ fun List<Actor?>?.toLocalItems(): List<LocalActor> {
 
 fun Actor.toLocalItem(): LocalActor {
     return LocalActor(
-        this.actorId,
+        this.id,
         this.name,
-        this.birthday,
-        this.occupation,
-        this.img,
         this.status,
-        this.nickname,
-        this.portrayed,
-        this.category
+        this.species,
+        this.type,
+        this.gender,
+        this.image
     )
 }

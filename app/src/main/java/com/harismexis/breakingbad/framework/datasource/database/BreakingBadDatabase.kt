@@ -22,7 +22,7 @@ abstract class BreakingBadDatabase : RoomDatabase() {
     companion object {
         @Volatile
         var INSTANCE: BreakingBadDatabase? = null
-        private const val DATABASE_FILE_NAME = "breaking_bad_room_database"
+        private const val DATABASE_FILE_NAME = "rick_and_morty_room_database"
 
         fun getDatabase(
             context: Context

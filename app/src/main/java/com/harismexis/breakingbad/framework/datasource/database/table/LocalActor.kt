@@ -4,15 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "breaking_bad_actor_table")
+@Entity(tableName = "rick_and_morty_character_table")
 data class LocalActor(
-    @PrimaryKey @ColumnInfo(name = "char_id") val actorId: Int,
+    @PrimaryKey @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "name") val name: String?,
-    @ColumnInfo(name = "birthday") val birthday: String?,
-    @ColumnInfo(name = "occupation") val occupation: List<String>?,
-    @ColumnInfo(name = "img") val img: String?,
     @ColumnInfo(name = "status") val status: String?,
-    @ColumnInfo(name = "nickname") val nickname: String?,
-    @ColumnInfo(name = "portrayed") val portrayed: String?,
-    @ColumnInfo(name = "category") val category: String?
+    @ColumnInfo(name = "species") val species: String?,
+    @ColumnInfo(name = "type") val type: String?,
+    @ColumnInfo(name = "gender") val gender: String?,
+    @ColumnInfo(name = "image") val image: String?
 )

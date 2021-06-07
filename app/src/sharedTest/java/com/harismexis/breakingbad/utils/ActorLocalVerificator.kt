@@ -21,14 +21,13 @@ class ActorLocalVerificator {
         actual: Actor,
         localActor: LocalActor
     ) {
-        Assert.assertEquals(localActor.actorId, actual.actorId)
+        Assert.assertEquals(localActor.id, actual.id)
         Assert.assertEquals(localActor.name, actual.name)
-        Assert.assertEquals(localActor.birthday, actual.birthday)
-        Assert.assertEquals(localActor.img, actual.img)
         Assert.assertEquals(localActor.status, actual.status)
-        Assert.assertEquals(localActor.nickname, actual.nickname)
-        Assert.assertEquals(localActor.portrayed, actual.portrayed)
-        Assert.assertEquals(localActor.category, actual.category)
+        Assert.assertEquals(localActor.species, actual.species)
+        Assert.assertEquals(localActor.type, actual.type)
+        Assert.assertEquals(localActor.gender, actual.gender)
+        Assert.assertEquals(localActor.image, actual.image)
     }
 
     fun verifyLocalActorsAgainstActors(
@@ -46,14 +45,14 @@ class ActorLocalVerificator {
         actual: LocalActor,
         actor: Actor
     ) {
-        Assert.assertEquals(actor.actorId, actual.actorId)
+        Assert.assertEquals(actor.id, actual.id)
         Assert.assertEquals(actor.name, actual.name)
-        Assert.assertEquals(actor.birthday, actual.birthday)
-        Assert.assertEquals(actor.img, actual.img)
         Assert.assertEquals(actor.status, actual.status)
-        Assert.assertEquals(actor.nickname, actual.nickname)
-        Assert.assertEquals(actor.portrayed, actual.portrayed)
-        Assert.assertEquals(actor.category, actual.category)
+        Assert.assertEquals(actor.species, actual.species)
+        Assert.assertEquals(actor.status, actual.status)
+        Assert.assertEquals(actor.type, actual.type)
+        Assert.assertEquals(actor.gender, actual.gender)
+        Assert.assertEquals(actor.image, actual.image)
     }
 
 }

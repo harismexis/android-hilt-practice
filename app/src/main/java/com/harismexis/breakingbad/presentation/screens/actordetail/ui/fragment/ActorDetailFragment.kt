@@ -1,7 +1,6 @@
 package com.harismexis.breakingbad.presentation.screens.actordetail.ui.fragment
 
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -12,8 +11,6 @@ import com.harismexis.breakingbad.R
 import com.harismexis.breakingbad.databinding.ActorDetailViewBinding
 import com.harismexis.breakingbad.databinding.FragmentActorDetailBinding
 import com.harismexis.breakingbad.datamodel.domain.Actor
-import com.harismexis.breakingbad.datamodel.domain.Actor.Companion.occupationString
-import com.harismexis.breakingbad.framework.extensions.getLinkSpanned
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 import com.harismexis.breakingbad.framework.extensions.setTextOrUnknown
 import com.harismexis.breakingbad.framework.extensions.showToast
@@ -94,20 +91,17 @@ class ActorDetailFragment : BaseFragment() {
             it.toolbar.setNavigationIcon(R.drawable.ic_arrow_left_white_rounded_24dp)
         }
         detailBinding?.let {
-            requireContext().populateWithGlide(it.img, actor.img)
+            requireContext().populateWithGlide(it.img, actor.image)
             it.txtName.setTextOrUnknown(actor.name)
-            it.txtNickname.setTextOrUnknown(actor.nickname)
-            it.txtPortrayed.setTextOrUnknown(actor.portrayed)
-            it.txtOccupation.setTextOrUnknown(actor.occupationString())
-            it.txtBirthday.setTextOrUnknown(actor.birthday)
             it.txtStatus.setTextOrUnknown(actor.status)
-            it.txtCategory.setTextOrUnknown(actor.category.toString())
-            it.txtImgUrl.movementMethod = LinkMovementMethod.getInstance()
-            it.txtImgUrl.text = getLinkSpanned(
-                getString(R.string.missing_img_url),
-                getString(R.string.character_image),
-                actor.img
-            )
+            it.txtSpecies.setTextOrUnknown(actor.species)
+            it.txtType.setTextOrUnknown(actor.type)
+            it.txtGender.setTextOrUnknown(actor.gender)
+//            it.txtImgUrl.text = getLinkSpanned(
+//                getString(R.string.missing_img_url),
+//                getString(R.string.character_image),
+//                actor.img
+//            )
         }
     }
 
