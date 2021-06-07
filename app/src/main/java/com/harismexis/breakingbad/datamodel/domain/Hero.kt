@@ -1,6 +1,6 @@
 package com.harismexis.breakingbad.datamodel.domain
 
-data class Actor(
+data class Hero(
     val id: Int,
     val name: String?,
     val status: String?,

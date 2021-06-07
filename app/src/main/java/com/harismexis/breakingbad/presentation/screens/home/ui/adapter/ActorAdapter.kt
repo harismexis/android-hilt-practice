@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.ActorViewHolder
 import com.harismexis.breakingbad.databinding.VhActorItemBinding
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 
 class ActorAdapter(
-    private val models: List<Actor>,
+    private val models: List<Hero>,
     private val clickListener: ActorViewHolder.ActorClickListener
 ) : RecyclerView.Adapter<ActorViewHolder>() {
 

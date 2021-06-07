@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.breakingbad.datamodel.repo.ActorLocalRepo
+import com.harismexis.breakingbad.datamodel.repo.HeroLocalRepo
 import com.harismexis.breakingbad.framework.extensions.getErrorMessage
 import com.harismexis.breakingbad.presentation.result.ActorDetailResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ActorDetailViewModel @Inject constructor(
-    private val actorLocal: ActorLocalRepo,
+    private val heroLocal: HeroLocalRepo,
 ) : ViewModel() {
 
     private val tag = ActorDetailViewModel::class.qualifiedName
@@ -26,7 +26,7 @@ class ActorDetailViewModel @Inject constructor(
     fun retrieveActorById(itemId: Int) {
         viewModelScope.launch {
             try {
-                val item = actorLocal.getActor(itemId)
+                val item = heroLocal.getActor(itemId)
                 item?.let {
                     mActorDetailResult.value = ActorDetailResult.ActorSuccess(item)
                 }

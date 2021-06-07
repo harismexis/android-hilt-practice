@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.breakingbad.datamodel.repo.ActorLocalRepo
+import com.harismexis.breakingbad.datamodel.repo.HeroLocalRepo
 import com.harismexis.breakingbad.datamodel.repo.ActorRemoteRepo
 import com.harismexis.breakingbad.framework.event.Event
 import com.harismexis.breakingbad.framework.extensions.getErrorMessage
@@ -19,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val actorRemote: ActorRemoteRepo,
-    private val actorLocal: ActorLocalRepo,
+    private val heroLocal: HeroLocalRepo,
     private val connectivity: ConnectivityMonitorSimple,
 ) : ViewModel() {
 

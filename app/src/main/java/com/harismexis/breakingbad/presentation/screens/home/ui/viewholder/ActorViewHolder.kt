@@ -2,7 +2,7 @@ package com.harismexis.breakingbad.presentation.screens.home.ui.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.harismexis.breakingbad.databinding.VhActorItemBinding
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 
 class ActorViewHolder(
@@ -11,11 +11,11 @@ class ActorViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     interface ActorClickListener {
-        fun onActorClick(item: Actor, position: Int)
+        fun onActorClick(item: Hero, position: Int)
     }
 
     fun bind(
-        item: Actor,
+        item: Hero,
         position: Int
     ) {
         itemView.context.populateWithGlide(binding.imgView, item.image)

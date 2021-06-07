@@ -1,13 +1,13 @@
 package com.harismexis.breakingbad.utils
 
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.datasource.database.table.LocalActor
 import org.junit.Assert
 
 class ActorLocalVerificator {
 
     fun verifyActorsAgainstLocalActors(
-        actual: List<Actor>,
+        actual: List<Hero>,
         localActors: List<LocalActor>
     ) {
         verifyListsHaveSameSize(actual, localActors)
@@ -18,7 +18,7 @@ class ActorLocalVerificator {
     }
 
     private fun verifyActorAgainstLocalActor(
-        actual: Actor,
+        actual: Hero,
         localActor: LocalActor
     ) {
         Assert.assertEquals(localActor.id, actual.id)
@@ -32,10 +32,10 @@ class ActorLocalVerificator {
 
     fun verifyLocalActorsAgainstActors(
         actual: List<LocalActor>,
-        actors: List<Actor>
+        heroes: List<Hero>
     ) {
-        verifyListsHaveSameSize(actual, actors)
-        actors.forEachIndexed { index, item ->
+        verifyListsHaveSameSize(actual, heroes)
+        heroes.forEachIndexed { index, item ->
             val localItem = actual[index]
             verifyLocalActorAgainstActor(localItem, item)
         }
@@ -43,16 +43,16 @@ class ActorLocalVerificator {
 
     private fun verifyLocalActorAgainstActor(
         actual: LocalActor,
-        actor: Actor
+        hero: Hero
     ) {
-        Assert.assertEquals(actor.id, actual.id)
-        Assert.assertEquals(actor.name, actual.name)
-        Assert.assertEquals(actor.status, actual.status)
-        Assert.assertEquals(actor.species, actual.species)
-        Assert.assertEquals(actor.status, actual.status)
-        Assert.assertEquals(actor.type, actual.type)
-        Assert.assertEquals(actor.gender, actual.gender)
-        Assert.assertEquals(actor.image, actual.image)
+        Assert.assertEquals(hero.id, actual.id)
+        Assert.assertEquals(hero.name, actual.name)
+        Assert.assertEquals(hero.status, actual.status)
+        Assert.assertEquals(hero.species, actual.species)
+        Assert.assertEquals(hero.status, actual.status)
+        Assert.assertEquals(hero.type, actual.type)
+        Assert.assertEquals(hero.gender, actual.gender)
+        Assert.assertEquals(hero.image, actual.image)
     }
 
 }

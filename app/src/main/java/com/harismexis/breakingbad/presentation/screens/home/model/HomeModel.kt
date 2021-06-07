@@ -1,26 +1,26 @@
 package com.harismexis.breakingbad.presentation.screens.home.model
 
-import com.harismexis.breakingbad.datamodel.domain.Actor
-import com.harismexis.breakingbad.datamodel.repo.ActorLocalRepo
+import com.harismexis.breakingbad.datamodel.domain.Hero
+import com.harismexis.breakingbad.datamodel.repo.HeroLocalRepo
 import com.harismexis.breakingbad.datamodel.repo.ActorRemoteRepo
 import javax.inject.Inject
 
 data class HomeModel @Inject constructor (
     private val actorRemote: ActorRemoteRepo,
-    private val actorLocal: ActorLocalRepo
+    private val heroLocal: HeroLocalRepo
 ) {
-    suspend fun getRemoteActors(name: String? = null): List<Actor> = actorRemote.getActors(name)
+    suspend fun getRemoteActors(name: String? = null): List<Hero> = actorRemote.getActors(name)
 
-    suspend fun updateActors(items: List<Actor>) {
-        actorLocal.updateActors(items)
+    suspend fun updateActors(items: List<Hero>) {
+        heroLocal.updateActors(items)
     }
 
-    suspend fun getLocalActor(itemId: Int): Actor? {
-        return actorLocal.getActor(itemId)
+    suspend fun getLocalActor(itemId: Int): Hero? {
+        return heroLocal.getActor(itemId)
     }
 
-    suspend fun getLocalActors(): List<Actor> {
-        return actorLocal.getActors()
+    suspend fun getLocalActors(): List<Hero> {
+        return heroLocal.getActors()
     }
 
 }

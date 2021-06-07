@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.harismexis.breakingbad.R
 import com.harismexis.breakingbad.databinding.ActorDetailViewBinding
 import com.harismexis.breakingbad.databinding.FragmentActorDetailBinding
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 import com.harismexis.breakingbad.framework.extensions.setTextOrUnknown
 import com.harismexis.breakingbad.framework.extensions.showToast
@@ -85,18 +85,18 @@ class ActorDetailFragment : BaseFragment() {
         }
     }
 
-    private fun populate(actor: Actor) {
+    private fun populate(hero: Hero) {
         binding?.let {
-            it.toolbarTitle.text = actor.name
+            it.toolbarTitle.text = hero.name
             it.toolbar.setNavigationIcon(R.drawable.ic_arrow_left_white_rounded_24dp)
         }
         detailBinding?.let {
-            requireContext().populateWithGlide(it.img, actor.image)
-            it.txtName.setTextOrUnknown(actor.name)
-            it.txtStatus.setTextOrUnknown(actor.status)
-            it.txtSpecies.setTextOrUnknown(actor.species)
-            it.txtType.setTextOrUnknown(actor.type)
-            it.txtGender.setTextOrUnknown(actor.gender)
+            requireContext().populateWithGlide(it.img, hero.image)
+            it.txtName.setTextOrUnknown(hero.name)
+            it.txtStatus.setTextOrUnknown(hero.status)
+            it.txtSpecies.setTextOrUnknown(hero.species)
+            it.txtType.setTextOrUnknown(hero.type)
+            it.txtGender.setTextOrUnknown(hero.gender)
 //            it.txtImgUrl.text = getLinkSpanned(
 //                getString(R.string.missing_img_url),
 //                getString(R.string.character_image),

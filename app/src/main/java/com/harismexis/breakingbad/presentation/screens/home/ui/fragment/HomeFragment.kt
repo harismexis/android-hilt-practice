@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harismexis.breakingbad.R
 import com.harismexis.breakingbad.databinding.FragmentHomeBinding
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.event.EventObserver
 import com.harismexis.breakingbad.framework.extensions.showToast
 import com.harismexis.breakingbad.framework.util.ui.hideKeyboard
@@ -26,7 +26,7 @@ class HomeFragment : BaseFragment(), ActorViewHolder.ActorClickListener,
     private val viewModel: HomeViewModel by viewModels()
     private var binding: FragmentHomeBinding? = null
     private lateinit var adapter: ActorAdapter
-    private var uiModels: MutableList<Actor> = mutableListOf()
+    private var uiModels: MutableList<Hero> = mutableListOf()
 
     override fun initialiseViewBinding(
         inflater: LayoutInflater,
@@ -103,7 +103,7 @@ class HomeFragment : BaseFragment(), ActorViewHolder.ActorClickListener,
         })
     }
 
-    private fun populate(models: List<Actor>) {
+    private fun populate(models: List<Hero>) {
         binding?.homeSwipeRefresh?.isRefreshing = false
         binding?.loadingProgressBar?.visibility = View.GONE
         binding?.homeList?.visibility = View.VISIBLE
@@ -118,7 +118,7 @@ class HomeFragment : BaseFragment(), ActorViewHolder.ActorClickListener,
     }
 
     override fun onActorClick(
-        item: Actor,
+        item: Hero,
         position: Int
     ) {
         binding?.searchView?.clearFocus()

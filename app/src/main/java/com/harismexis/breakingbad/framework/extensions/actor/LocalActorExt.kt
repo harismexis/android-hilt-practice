@@ -1,10 +1,10 @@
 package com.harismexis.breakingbad.framework.extensions.actor
 
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.datasource.database.table.LocalActor
 
-fun List<LocalActor?>?.toItems(): List<Actor> {
-    val items = mutableListOf<Actor>()
+fun List<LocalActor?>?.toItems(): List<Hero> {
+    val items = mutableListOf<Hero>()
     if (this == null) return items.toList()
     val filteredList = this.filterNotNull()
     items.addAll(filteredList.map {
@@ -13,8 +13,8 @@ fun List<LocalActor?>?.toItems(): List<Actor> {
     return items.toList()
 }
 
-fun LocalActor.toItem(): Actor {
-    return Actor(
+fun LocalActor.toItem(): Hero {
+    return Hero(
         this.id,
         this.name,
         this.status,
@@ -25,7 +25,7 @@ fun LocalActor.toItem(): Actor {
     )
 }
 
-fun List<Actor?>?.toLocalItems(): List<LocalActor> {
+fun List<Hero?>?.toLocalItems(): List<LocalActor> {
     val localItems = mutableListOf<LocalActor>()
     if (this == null) return localItems.toList()
     val filteredList = this.filterNotNull()
@@ -35,7 +35,7 @@ fun List<Actor?>?.toLocalItems(): List<LocalActor> {
     return localItems.toList()
 }
 
-fun Actor.toLocalItem(): LocalActor {
+fun Hero.toLocalItem(): LocalActor {
     return LocalActor(
         this.id,
         this.name,

@@ -1,6 +1,6 @@
 package com.harismexis.breakingbad.datamodel.repo
 
-import com.harismexis.breakingbad.datamodel.domain.Actor
+import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.datasource.database.data.BreakingBadLocalDao
 import com.harismexis.breakingbad.framework.extensions.actor.toItem
 import com.harismexis.breakingbad.framework.extensions.actor.toItems
@@ -9,15 +9,15 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ActorLocalRepo @Inject constructor(
+class HeroLocalRepo @Inject constructor(
     private val dao: BreakingBadLocalDao
 ) {
-    suspend fun updateActors(items: List<Actor>) {
+    suspend fun updateActors(items: List<Hero>) {
         dao.deleteAllActors()
         dao.insertActors(items.toLocalItems())
     }
 
-    suspend fun getActor(itemId: Int): Actor? {
+    suspend fun getActor(itemId: Int): Hero? {
         val localItem = dao.getActorById(itemId)
         localItem?.let {
             return it.toItem()
@@ -25,7 +25,7 @@ class ActorLocalRepo @Inject constructor(
         return null
     }
 
-    suspend fun getActors(): List<Actor> {
+    suspend fun getActors(): List<Hero> {
         return dao.getAllActors().toItems()
     }
 
