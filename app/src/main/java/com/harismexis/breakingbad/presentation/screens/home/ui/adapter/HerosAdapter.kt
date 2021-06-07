@@ -9,7 +9,7 @@ import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroVi
 
 class HerosAdapter(
     private val models: List<Hero>,
-    private val clickListener: HeroViewHolder.ActorClickListener
+    private val clickListener: HeroViewHolder.HeroClickListener
 ) : RecyclerView.Adapter<HeroViewHolder>() {
 
     override fun onCreateViewHolder(

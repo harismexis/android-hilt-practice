@@ -13,12 +13,12 @@ class HeroLocalRepo @Inject constructor(
     private val dao: RickAndMortyLocalDao
 ) {
     suspend fun updateActors(items: List<Hero>) {
-        dao.deleteAllActors()
-        dao.insertActors(items.toLocalItems())
+        dao.deleteAllHeros()
+        dao.insertHeros(items.toLocalItems())
     }
 
     suspend fun getActor(itemId: Int): Hero? {
-        val localItem = dao.getActorById(itemId)
+        val localItem = dao.getHeroById(itemId)
         localItem?.let {
             return it.toItem()
         }
@@ -26,7 +26,7 @@ class HeroLocalRepo @Inject constructor(
     }
 
     suspend fun getActors(): List<Hero> {
-        return dao.getAllActors().toItems()
+        return dao.getAllHeros().toItems()
     }
 
 }

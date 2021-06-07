@@ -10,15 +10,15 @@ import com.harismexis.breakingbad.framework.datasource.database.table.LocalHero
 interface RickAndMortyLocalDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertActors(items: List<LocalHero>)
+    suspend fun insertHeros(items: List<LocalHero>)
 
     @Query("SELECT * FROM rick_and_morty_character_table WHERE id = :itemId")
-    suspend fun getActorById(itemId: Int): LocalHero?
+    suspend fun getHeroById(itemId: Int): LocalHero?
 
     @Query("SELECT * FROM rick_and_morty_character_table")
-    suspend fun getAllActors(): List<LocalHero?>?
+    suspend fun getAllHeros(): List<LocalHero?>?
 
     @Query("DELETE FROM rick_and_morty_character_table")
-    suspend fun deleteAllActors()
+    suspend fun deleteAllHeros()
 
 }

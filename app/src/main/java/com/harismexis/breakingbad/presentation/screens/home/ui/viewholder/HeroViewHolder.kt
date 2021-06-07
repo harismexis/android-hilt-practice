@@ -7,11 +7,11 @@ import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 
 class HeroViewHolder(
     private val binding: VhActorItemBinding,
-    private val itemClick: ActorClickListener
+    private val itemClick: HeroClickListener
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    interface ActorClickListener {
-        fun onActorClick(item: Hero, position: Int)
+    interface HeroClickListener {
+        fun onHeroClick(item: Hero, position: Int)
     }
 
     fun bind(
@@ -22,7 +22,7 @@ class HeroViewHolder(
         binding.txtName.text = item.name
         binding.txtMeta.text = item.species
         itemView.setOnClickListener {
-            itemClick.onActorClick(item, position)
+            itemClick.onHeroClick(item, position)
         }
     }
 

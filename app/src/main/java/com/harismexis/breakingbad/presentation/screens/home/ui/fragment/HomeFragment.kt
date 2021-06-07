@@ -20,7 +20,7 @@ import com.harismexis.breakingbad.presentation.screens.home.ui.adapter.HerosAdap
 import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroViewHolder
 import com.harismexis.breakingbad.presentation.screens.home.viewmodel.HomeViewModel
 
-class HomeFragment : BaseFragment(), HeroViewHolder.ActorClickListener,
+class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
     android.widget.SearchView.OnQueryTextListener {
 
     private val viewModel: HomeViewModel by viewModels()
@@ -117,7 +117,7 @@ class HomeFragment : BaseFragment(), HeroViewHolder.ActorClickListener,
         binding?.loadingProgressBar?.visibility = View.GONE
     }
 
-    override fun onActorClick(
+    override fun onHeroClick(
         item: Hero,
         position: Int
     ) {
