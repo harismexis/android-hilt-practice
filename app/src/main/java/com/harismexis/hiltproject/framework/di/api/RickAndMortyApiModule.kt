@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RickAndMortyApiModule {
 
     @Provides
-    fun provideBreakingBadApi(retrofit: Retrofit): RickAndMortyApi {
+    fun provideRickAndMortyApi(retrofit: Retrofit): RickAndMortyApi {
         return retrofit.create(RickAndMortyApi::class.java)
     }
 
