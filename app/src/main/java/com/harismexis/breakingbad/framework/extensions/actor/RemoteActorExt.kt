@@ -2,11 +2,13 @@ package com.harismexis.breakingbad.framework.extensions.actor
 
 import com.harismexis.breakingbad.datamodel.domain.Actor
 import com.harismexis.breakingbad.framework.datasource.network.model.RemoteActor
+import com.harismexis.breakingbad.framework.datasource.network.model.RemoteCharacters
 
-fun List<RemoteActor?>?.toItems(): List<Actor> {
+fun RemoteCharacters?.toItems(): List<Actor> {
     val items = mutableListOf<Actor>()
     if (this == null) return items.toList()
-    val filteredList = this.filter { it?.id != null }
+    if(this.results.isNullOrEmpty()) return items.toList()
+    val filteredList = this.results.filter { it.id != null }
     items.addAll(filteredList.map {
         it !!.toItem(it.id !!)
     })

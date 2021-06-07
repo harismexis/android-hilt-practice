@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
         if (connectivity.isOnline()) {
             fetchRemoteActors(searchQuery)
         } else {
-            fetchLocalActors()
+            //fetchLocalActors()
         }
     }
 
@@ -59,7 +59,7 @@ class HomeViewModel @Inject constructor(
             try {
                 val items = actorRemote.getActors(name)
                 mActorsResult.value = ActorsResult.ActorsSuccess(items)
-                actorLocal.updateActors(items)
+                // actorLocal.updateActors(items)
             } catch (e: Exception) {
                 Log.d(TAG, e.getErrorMessage())
                 mActorsResult.value = ActorsResult.ActorsError(e)
@@ -68,17 +68,17 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun fetchLocalActors() {
-        viewModelScope.launch {
-            try {
-                val items = actorLocal.getActors()
-                mActorsResult.value = ActorsResult.ActorsSuccess(items)
-            } catch (e: Exception) {
-                Log.d(TAG, e.getErrorMessage())
-                mActorsResult.value = ActorsResult.ActorsError(e)
-                mShowErrorMessage.value = Event(e.getErrorMessage())
-            }
-        }
-    }
+//    private fun fetchLocalActors() {
+//        viewModelScope.launch {
+//            try {
+//                val items = actorLocal.getActors()
+//                mActorsResult.value = ActorsResult.ActorsSuccess(items)
+//            } catch (e: Exception) {
+//                Log.d(TAG, e.getErrorMessage())
+//                mActorsResult.value = ActorsResult.ActorsError(e)
+//                mShowErrorMessage.value = Event(e.getErrorMessage())
+//            }
+//        }
+//    }
 
 }

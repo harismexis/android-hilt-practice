@@ -2,11 +2,7 @@ package com.harismexis.breakingbad.parser
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.harismexis.breakingbad.datamodel.domain.Actor
-import com.harismexis.breakingbad.framework.datasource.database.table.LocalActor
 import com.harismexis.breakingbad.framework.datasource.network.model.RemoteActor
-import com.harismexis.breakingbad.framework.extensions.actor.toItems
-import com.harismexis.breakingbad.framework.extensions.actor.toLocalItems
 import java.lang.reflect.Type
 import java.util.*
 
@@ -38,46 +34,46 @@ class MockActorsParser(private val parser: BaseFileParser) {
     }
 
     // local models
-    fun getMockLocalActor(): LocalActor = getMockLocalActorsWhenJsonHasAllItemsValid()[0]
+    //fun getMockLocalActor(): LocalActor = getMockLocalActorsWhenJsonHasAllItemsValid()[0]
 
-    fun getMockLocalActorsWhenJsonHasAllItemsValid(): List<LocalActor> =
-        getMockActorsWhenJsonHasAllItemsValid().toLocalItems()
-
-    fun getMockLocalActorsWhenJsonHasSomeInvalidIds(): List<LocalActor> =
-        getMockActorsWhenJsonHasSomeInvalidIds().toLocalItems()
-
-    fun getMockLocalActorsWhenJsonHasAllIdsInvalid(): List<LocalActor> =
-        getMockActorsWhenJsonHasAllIdsInvalid().toLocalItems()
-
-    fun getMockLocalActorsSearchByNameLikeWalter(): List<LocalActor> =
-        getMockActorsSearchByNameLikeWalter().toLocalItems()
-
-    fun getMockLocalActorsSearchByNameLikeSala(): List<LocalActor> =
-        getMockActorsSearchByNameLikeSala().toLocalItems()
+//    fun getMockLocalActorsWhenJsonHasAllItemsValid(): List<LocalActor> =
+//        getMockActorsWhenJsonHasAllItemsValid().toLocalItems()
+//
+//    fun getMockLocalActorsWhenJsonHasSomeInvalidIds(): List<LocalActor> =
+//        getMockActorsWhenJsonHasSomeInvalidIds().toLocalItems()
+//
+//    fun getMockLocalActorsWhenJsonHasAllIdsInvalid(): List<LocalActor> =
+//        getMockActorsWhenJsonHasAllIdsInvalid().toLocalItems()
+//
+//    fun getMockLocalActorsSearchByNameLikeWalter(): List<LocalActor> =
+//        getMockActorsSearchByNameLikeWalter().toLocalItems()
+//
+//    fun getMockLocalActorsSearchByNameLikeSala(): List<LocalActor> =
+//        getMockActorsSearchByNameLikeSala().toLocalItems()
 
     // core models
-    fun getMockActor(): Actor = getMockActorsWhenJsonHasAllItemsValid()[0]
+    //fun getMockActor(): Actor = getMockActorsWhenJsonHasAllItemsValid()[0]
 
-    fun getMockActorsWhenJsonHasAllItemsValid(): List<Actor> =
-        getMockRemoteActorsWhenJsonHasAllIdsValid().toItems()
-
-    fun getMockActorsWhenJsonHasSomeInvalidIds(): List<Actor> =
-        getMockRemoteActorsWhenJsonHasSomeInvalidIds().toItems()
-
-    fun getMockActorsWhenJsonHasSomeEmptyItems(): List<Actor> =
-        getMockRemoteActorsWhenJsonHasSomeEmptyItems().toItems()
-
-    fun getMockActorsWhenJsonHasAllIdsInvalid(): List<Actor> =
-        getMockRemoteActorsWhenJsonHasAllIdsInvalid().toItems()
-
-    fun getMockActorsWhenJsonIsEmpty(): List<Actor> =
-        getMockRemoteActorsWhenJsonIsEmpty().toItems()
-
-    fun getMockActorsSearchByNameLikeWalter(): List<Actor> =
-        getMockRemoteActorsSearchByNameLikeWalter().toItems()
-
-    fun getMockActorsSearchByNameLikeSala(): List<Actor> =
-        getMockRemoteActorsSearchByNameLikeSala().toItems()
+//    fun getMockActorsWhenJsonHasAllItemsValid(): List<Actor> =
+//        getMockRemoteActorsWhenJsonHasAllIdsValid().toItems()
+//
+//    fun getMockActorsWhenJsonHasSomeInvalidIds(): List<Actor> =
+//        getMockRemoteActorsWhenJsonHasSomeInvalidIds().toItems()
+//
+//    fun getMockActorsWhenJsonHasSomeEmptyItems(): List<Actor> =
+//        getMockRemoteActorsWhenJsonHasSomeEmptyItems().toItems()
+//
+//    fun getMockActorsWhenJsonHasAllIdsInvalid(): List<Actor> =
+//        getMockRemoteActorsWhenJsonHasAllIdsInvalid().toItems()
+//
+//    fun getMockActorsWhenJsonIsEmpty(): List<Actor> =
+//        getMockRemoteActorsWhenJsonIsEmpty().toItems()
+//
+//    fun getMockActorsSearchByNameLikeWalter(): List<Actor> =
+//        getMockRemoteActorsSearchByNameLikeWalter().toItems()
+//
+//    fun getMockActorsSearchByNameLikeSala(): List<Actor> =
+//        getMockRemoteActorsSearchByNameLikeSala().toItems()
 
     // remote models
     fun getMockRemoteActorsWhenJsonHasAllIdsValid(): List<RemoteActor> =
