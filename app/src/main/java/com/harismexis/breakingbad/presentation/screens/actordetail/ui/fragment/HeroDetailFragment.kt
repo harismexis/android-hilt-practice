@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.harismexis.breakingbad.R
-import com.harismexis.breakingbad.databinding.ActorDetailViewBinding
-import com.harismexis.breakingbad.databinding.FragmentActorDetailBinding
+import com.harismexis.breakingbad.databinding.FragmentHeroDetailBinding
+import com.harismexis.breakingbad.databinding.HeroDetailViewBinding
 import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 import com.harismexis.breakingbad.framework.extensions.setTextOrUnknown
@@ -20,8 +20,8 @@ import com.harismexis.breakingbad.presentation.screens.actordetail.viewmodel.Her
 
 class HeroDetailFragment : BaseFragment() {
 
-    private var binding: FragmentActorDetailBinding? = null
-    private var detailBinding: ActorDetailViewBinding? = null
+    private var binding: FragmentHeroDetailBinding? = null
+    private var detailBinding: HeroDetailViewBinding? = null
     private val viewModel: HeroDetailViewModel by viewModels()
 
     companion object {
@@ -57,7 +57,7 @@ class HeroDetailFragment : BaseFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?
     ) {
-        binding = FragmentActorDetailBinding.inflate(inflater, container, false)
+        binding = FragmentHeroDetailBinding.inflate(inflater, container, false)
         detailBinding = binding?.itemDetailContainer
     }
 

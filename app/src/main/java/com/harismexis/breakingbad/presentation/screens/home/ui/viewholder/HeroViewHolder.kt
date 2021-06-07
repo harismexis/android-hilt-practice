@@ -1,12 +1,12 @@
 package com.harismexis.breakingbad.presentation.screens.home.ui.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
-import com.harismexis.breakingbad.databinding.VhActorItemBinding
+import com.harismexis.breakingbad.databinding.VhHeroItemBinding
 import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 
 class HeroViewHolder(
-    private val binding: VhActorItemBinding,
+    private val binding: VhHeroItemBinding,
     private val itemClick: HeroClickListener
 ) : RecyclerView.ViewHolder(binding.root) {
 

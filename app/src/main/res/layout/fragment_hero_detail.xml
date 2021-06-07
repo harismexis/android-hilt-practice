@@ -48,7 +48,7 @@
 
         <include
             android:id="@+id/item_detail_container"
-            layout="@layout/actor_detail_view"
+            layout="@layout/hero_detail_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible" />

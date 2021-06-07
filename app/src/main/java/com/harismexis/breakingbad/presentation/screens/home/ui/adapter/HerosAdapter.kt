@@ -3,7 +3,7 @@ package com.harismexis.breakingbad.presentation.screens.home.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.harismexis.breakingbad.databinding.VhActorItemBinding
+import com.harismexis.breakingbad.databinding.VhHeroItemBinding
 import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroViewHolder
 
@@ -17,7 +17,7 @@ class HerosAdapter(
         viewType: Int
     ): HeroViewHolder {
         return HeroViewHolder(
-            VhActorItemBinding.inflate(
+            VhHeroItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
