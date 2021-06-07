@@ -1,7 +1,7 @@
 ext {
 
     common = [
-            BREAKING_BAD_API_BASE_URL : '\"' + "https://www.breakingbadapi.com/api/" + '\"'
+            RICK_AND_MORTY_API_BASE_URL : '\"' + "https://rickandmortyapi.com/api/" + '\"'
     ]
 
 }

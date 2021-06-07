@@ -19,7 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "com.harismexis.breakingbad.setup.runner.InstrumentedRunner"
-        buildConfigField "String", "BREAKING_BAD_API_BASE_URL", commonValues.BREAKING_BAD_API_BASE_URL
+        buildConfigField "String", "RICK_AND_MORTY_API_BASE_URL", commonValues.RICK_AND_MORTY_API_BASE_URL
     }
 
     buildTypes {

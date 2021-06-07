@@ -27,7 +27,7 @@ class BreakingBadApiModule {
         gson: Gson
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BREAKING_BAD_API_BASE_URL)
+            .baseUrl(BuildConfig.RICK_AND_MORTY_API_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
