@@ -2,7 +2,7 @@ package com.harismexis.hiltproject.datamodel.repo
 
 import com.harismexis.hiltproject.datamodel.domain.Hero
 import com.harismexis.hiltproject.framework.datasource.network.data.RickAndMortyRemoteDao
-import com.harismexis.hiltproject.framework.extensions.actor.toItems
+import com.harismexis.hiltproject.framework.extensions.hero.toItems
 import javax.inject.Inject
 import javax.inject.Singleton
 

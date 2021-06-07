@@ -11,14 +11,14 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_home_dest_to_actor_detail_dest"
-            app:destination="@id/actor_detail_dest" />
+            android:id="@+id/action_home_dest_to_hero_detail_dest"
+            app:destination="@id/hero_detail_dest" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/actor_detail_dest"
-        android:name="com.harismexis.hiltproject.presentation.screens.actordetail.ui.fragment.HeroDetailFragment"
+        android:id="@+id/hero_detail_dest"
+        android:name="com.harismexis.hiltproject.presentation.screens.herodetail.ui.fragment.HeroDetailFragment"
         tools:layout="@layout/fragment_hero_detail">
 
         <argument

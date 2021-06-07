@@ -35,31 +35,31 @@ class HomeViewModel @Inject constructor(
 
     private var searchQuery: String? = null
 
-    fun fetchInitialActors() {
+    fun fetchInitialHeros() {
         if (connectivity.isOnline()) {
-            fetchRemoteActors(searchQuery)
+            fetchRemoteHeros(searchQuery)
         } else {
-            //fetchLocalActors()
+
         }
     }
 
     fun updateSearchQuery(query: String?) {
         searchQuery = query
-        fetchRemoteActors(query)
+        fetchRemoteHeros(query)
     }
 
     fun refresh(callback: Action1<Boolean>) {
         val canRefresh = connectivity.isOnline()
         callback.call(canRefresh)
-        if (canRefresh) fetchRemoteActors(searchQuery)
+        if (canRefresh) fetchRemoteHeros(searchQuery)
     }
 
-    private fun fetchRemoteActors(name: String? = null) {
+    private fun fetchRemoteHeros(name: String? = null) {
         viewModelScope.launch {
             try {
                 val items = heroRemote.getActors(name)
                 mActorsResult.value = HerosResult.Success(items)
-                // actorLocal.updateActors(items)
+                // heroLocal.updateHeros(items)
             } catch (e: Exception) {
                 Log.d(TAG, e.getErrorMessage())
                 mActorsResult.value = HerosResult.Error(e)
@@ -67,18 +67,5 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
-//    private fun fetchLocalActors() {
-//        viewModelScope.launch {
-//            try {
-//                val items = actorLocal.getActors()
-//                mActorsResult.value = ActorsResult.ActorsSuccess(items)
-//            } catch (e: Exception) {
-//                Log.d(TAG, e.getErrorMessage())
-//                mActorsResult.value = ActorsResult.ActorsError(e)
-//                mShowErrorMessage.value = Event(e.getErrorMessage())
-//            }
-//        }
-//    }
 
 }

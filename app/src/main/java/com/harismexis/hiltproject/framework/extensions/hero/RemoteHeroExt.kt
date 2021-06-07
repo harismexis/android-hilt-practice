@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.framework.extensions.actor
+package com.harismexis.hiltproject.framework.extensions.hero
 
 import com.harismexis.hiltproject.datamodel.domain.Hero
 import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHero

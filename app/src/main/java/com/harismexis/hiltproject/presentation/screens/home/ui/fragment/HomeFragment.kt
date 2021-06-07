@@ -66,7 +66,7 @@ class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
 
     override fun onViewCreated() {
         observeLiveData()
-        viewModel.fetchInitialActors()
+        viewModel.fetchInitialHeros()
     }
 
     private fun setupToolbar() {
@@ -118,7 +118,7 @@ class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
         position: Int
     ) {
         binding?.searchView?.clearFocus()
-        val action = HomeFragmentDirections.actionHomeDestToActorDetailDest(item.id)
+        val action = HomeFragmentDirections.actionHomeDestToHeroDetailDest(item.id)
         findNavController().navigate(action)
     }
 

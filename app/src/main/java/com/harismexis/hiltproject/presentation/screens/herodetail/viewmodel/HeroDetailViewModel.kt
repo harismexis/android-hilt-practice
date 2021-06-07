@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.presentation.screens.actordetail.viewmodel
+package com.harismexis.hiltproject.presentation.screens.herodetail.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -23,10 +23,10 @@ class HeroDetailViewModel @Inject constructor(
     val heroDetailResult: LiveData<HeroDetailResult>
         get() = mActorDetailResult
 
-    fun retrieveActorById(itemId: Int) {
+    fun getHeroById(itemId: Int) {
         viewModelScope.launch {
             try {
-                val item = heroLocal.getActor(itemId)
+                val item = heroLocal.getHero(itemId)
                 item?.let {
                     mActorDetailResult.value = HeroDetailResult.Success(item)
                 }

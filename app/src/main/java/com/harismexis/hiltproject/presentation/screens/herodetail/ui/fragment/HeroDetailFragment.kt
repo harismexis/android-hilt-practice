@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.presentation.screens.actordetail.ui.fragment
+package com.harismexis.hiltproject.presentation.screens.herodetail.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import com.harismexis.hiltproject.framework.extensions.setTextOrUnknown
 import com.harismexis.hiltproject.framework.extensions.showToast
 import com.harismexis.hiltproject.presentation.base.BaseFragment
 import com.harismexis.hiltproject.presentation.result.HeroDetailResult
-import com.harismexis.hiltproject.presentation.screens.actordetail.viewmodel.HeroDetailViewModel
+import com.harismexis.hiltproject.presentation.screens.herodetail.viewmodel.HeroDetailViewModel
 
 class HeroDetailFragment : BaseFragment() {
 
@@ -25,11 +25,11 @@ class HeroDetailFragment : BaseFragment() {
     private val viewModel: HeroDetailViewModel by viewModels()
 
     companion object {
-        private const val ARG_ACTOR_ID = "actorId"
+        private const val ARG_HERO_ID = "actorId"
 
         fun newInstance(actorId: Int): HeroDetailFragment {
             val args = Bundle()
-            args.putInt(ARG_ACTOR_ID, actorId)
+            args.putInt(ARG_HERO_ID, actorId)
             val fragment = HeroDetailFragment()
             fragment.arguments = args
             return fragment
@@ -39,7 +39,7 @@ class HeroDetailFragment : BaseFragment() {
     override fun onViewCreated() {
         setupToolbar()
         observeLiveData()
-        fetchActorDetails()
+        fetchHeroDetails()
     }
 
     private fun setupToolbar() {
@@ -78,10 +78,10 @@ class HeroDetailFragment : BaseFragment() {
 
     override fun onCreateView() {}
 
-    private fun fetchActorDetails() {
-        val actorId = arguments?.getInt(ARG_ACTOR_ID)
-        actorId?.let {
-            viewModel.retrieveActorById(it)
+    private fun fetchHeroDetails() {
+        val heroId = arguments?.getInt(ARG_HERO_ID)
+        heroId?.let {
+            viewModel.getHeroById(it)
         }
     }
 
@@ -97,11 +97,6 @@ class HeroDetailFragment : BaseFragment() {
             it.txtSpecies.setTextOrUnknown(hero.species)
             it.txtType.setTextOrUnknown(hero.type)
             it.txtGender.setTextOrUnknown(hero.gender)
-//            it.txtImgUrl.text = getLinkSpanned(
-//                getString(R.string.missing_img_url),
-//                getString(R.string.character_image),
-//                actor.img
-//            )
         }
     }
 
