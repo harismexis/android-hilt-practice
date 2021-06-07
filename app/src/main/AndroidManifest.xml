@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidBreakingBad">
+        android:theme="@style/Theme.AndroidHiltProject">
 
         <activity android:name="com.harismexis.hiltproject.presentation.screens.home.ui.activity.MainActivity"
             android:theme="@style/MainActivityTheme">

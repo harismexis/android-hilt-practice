@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @InstallIn(SingletonComponent::class)
 @Module
-class BreakingBadApiModule {
+class RickAndMortyApiModule {
 
     @Provides
     fun provideBreakingBadApi(retrofit: Retrofit): RickAndMortyApi {

@@ -79,10 +79,6 @@ class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
             // as we call setupWithNavController
             toolbar.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.player_dest -> {
-                        navController.navigate(R.id.player_dest)
-                        true
-                    }
                     else -> false
                 }
             }

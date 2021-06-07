@@ -1,6 +1,5 @@
 package com.harismexis.hiltproject.presentation.screens.home.ui.activity
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -34,15 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavView.setupWithNavController(navController)
         binding.bottomNavView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.quotes_dest -> {
-                    navController.navigate(R.id.quotes_dest)
-                }
-                R.id.deaths_dest -> {
-                    navController.navigate(R.id.deaths_dest)
-                }
-                R.id.episodes_dest -> {
-                    navController.navigate(R.id.episodes_dest)
-                }
+
             }
             true
         }
@@ -54,12 +45,6 @@ class MainActivity : AppCompatActivity() {
                 binding.bottomNavView.visibility = View.VISIBLE
             } else {
                 binding.bottomNavView.visibility = View.GONE
-            }
-
-            requestedOrientation = if (destination.id == R.id.player_dest) {
-                ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
-            } else {
-                ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
             }
 
         }
