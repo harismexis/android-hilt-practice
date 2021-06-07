@@ -8,16 +8,10 @@ import androidx.room.TypeConverters
 import com.harismexis.breakingbad.framework.datasource.database.converter.Converter
 import com.harismexis.breakingbad.framework.datasource.database.data.BreakingBadLocalDao
 import com.harismexis.breakingbad.framework.datasource.database.table.LocalActor
-import com.harismexis.breakingbad.framework.datasource.database.table.LocalDeath
-import com.harismexis.breakingbad.framework.datasource.database.table.LocalEpisode
-import com.harismexis.breakingbad.framework.datasource.database.table.LocalQuote
 
 @Database(
     entities = [
-        LocalActor::class,
-        LocalQuote::class,
-        LocalDeath::class,
-        LocalEpisode::class
+        LocalActor::class
     ],
     version = 1,
     exportSchema = false
