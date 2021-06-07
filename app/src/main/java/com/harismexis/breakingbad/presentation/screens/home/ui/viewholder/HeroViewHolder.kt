@@ -5,7 +5,7 @@ import com.harismexis.breakingbad.databinding.VhActorItemBinding
 import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 
-class ActorViewHolder(
+class HeroViewHolder(
     private val binding: VhActorItemBinding,
     private val itemClick: ActorClickListener
 ) : RecyclerView.ViewHolder(binding.root) {

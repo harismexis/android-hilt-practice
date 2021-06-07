@@ -3,20 +3,20 @@ package com.harismexis.breakingbad.presentation.screens.home.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.ActorViewHolder
 import com.harismexis.breakingbad.databinding.VhActorItemBinding
 import com.harismexis.breakingbad.datamodel.domain.Hero
+import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroViewHolder
 
-class ActorAdapter(
+class HerosAdapter(
     private val models: List<Hero>,
-    private val clickListener: ActorViewHolder.ActorClickListener
-) : RecyclerView.Adapter<ActorViewHolder>() {
+    private val clickListener: HeroViewHolder.ActorClickListener
+) : RecyclerView.Adapter<HeroViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ActorViewHolder {
-        return ActorViewHolder(
+    ): HeroViewHolder {
+        return HeroViewHolder(
             VhActorItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -27,7 +27,7 @@ class ActorAdapter(
     }
 
     override fun onBindViewHolder(
-        viewHolder: ActorViewHolder,
+        viewHolder: HeroViewHolder,
         position: Int
     ) {
         viewHolder.bind(models[position], position)
@@ -41,7 +41,7 @@ class ActorAdapter(
         return position.toLong()
     }
 
-    override fun onViewDetachedFromWindow(holder: ActorViewHolder) {
+    override fun onViewDetachedFromWindow(holder: HeroViewHolder) {
         super.onViewDetachedFromWindow(holder)
         holder.unbind()
     }

@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/actor_detail_dest"
-        android:name="com.harismexis.breakingbad.presentation.screens.actordetail.ui.fragment.ActorDetailFragment"
+        android:name="com.harismexis.breakingbad.presentation.screens.actordetail.ui.fragment.HeroDetailFragment"
         tools:layout="@layout/fragment_actor_detail">
 
         <argument

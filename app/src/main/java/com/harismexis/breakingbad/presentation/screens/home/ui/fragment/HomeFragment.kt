@@ -16,16 +16,16 @@ import com.harismexis.breakingbad.framework.extensions.showToast
 import com.harismexis.breakingbad.framework.util.ui.hideKeyboard
 import com.harismexis.breakingbad.presentation.base.BaseFragment
 import com.harismexis.breakingbad.presentation.result.ActorsResult
-import com.harismexis.breakingbad.presentation.screens.home.ui.adapter.ActorAdapter
-import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.ActorViewHolder
+import com.harismexis.breakingbad.presentation.screens.home.ui.adapter.HerosAdapter
+import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroViewHolder
 import com.harismexis.breakingbad.presentation.screens.home.viewmodel.HomeViewModel
 
-class HomeFragment : BaseFragment(), ActorViewHolder.ActorClickListener,
+class HomeFragment : BaseFragment(), HeroViewHolder.ActorClickListener,
     android.widget.SearchView.OnQueryTextListener {
 
     private val viewModel: HomeViewModel by viewModels()
     private var binding: FragmentHomeBinding? = null
-    private lateinit var adapter: ActorAdapter
+    private lateinit var adapter: HerosAdapter
     private var uiModels: MutableList<Hero> = mutableListOf()
 
     override fun initialiseViewBinding(
@@ -54,7 +54,7 @@ class HomeFragment : BaseFragment(), ActorViewHolder.ActorClickListener,
     }
 
     private fun initialiseRecycler() {
-        adapter = ActorAdapter(uiModels, this)
+        adapter = HerosAdapter(uiModels, this)
         adapter.setHasStableIds(true)
         binding?.homeList?.layoutManager = LinearLayoutManager(this.context)
         binding?.homeList?.adapter = adapter

@@ -13,11 +13,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ActorDetailViewModel @Inject constructor(
+class HeroDetailViewModel @Inject constructor(
     private val heroLocal: HeroLocalRepo,
 ) : ViewModel() {
 
-    private val tag = ActorDetailViewModel::class.qualifiedName
+    private val tag = HeroDetailViewModel::class.qualifiedName
 
     private val mActorDetailResult = MutableLiveData<ActorDetailResult>()
     val actorDetailResult: LiveData<ActorDetailResult>

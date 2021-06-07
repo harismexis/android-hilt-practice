@@ -16,21 +16,21 @@ import com.harismexis.breakingbad.framework.extensions.setTextOrUnknown
 import com.harismexis.breakingbad.framework.extensions.showToast
 import com.harismexis.breakingbad.presentation.base.BaseFragment
 import com.harismexis.breakingbad.presentation.result.ActorDetailResult
-import com.harismexis.breakingbad.presentation.screens.actordetail.viewmodel.ActorDetailViewModel
+import com.harismexis.breakingbad.presentation.screens.actordetail.viewmodel.HeroDetailViewModel
 
-class ActorDetailFragment : BaseFragment() {
+class HeroDetailFragment : BaseFragment() {
 
     private var binding: FragmentActorDetailBinding? = null
     private var detailBinding: ActorDetailViewBinding? = null
-    private val viewModel: ActorDetailViewModel by viewModels()
+    private val viewModel: HeroDetailViewModel by viewModels()
 
     companion object {
         private const val ARG_ACTOR_ID = "actorId"
 
-        fun newInstance(actorId: Int): ActorDetailFragment {
+        fun newInstance(actorId: Int): HeroDetailFragment {
             val args = Bundle()
             args.putInt(ARG_ACTOR_ID, actorId)
-            val fragment = ActorDetailFragment()
+            val fragment = HeroDetailFragment()
             fragment.arguments = args
             return fragment
         }
