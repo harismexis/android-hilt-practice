@@ -1,7 +1,7 @@
 package com.harismexis.breakingbad.utils
 
-import com.harismexis.breakingbad.datamodel.domain.Hero
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
+import com.harismexis.hiltproject.datamodel.domain.Hero
+import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHero
 import org.junit.Assert
 
 class HeroRemoteVerificator {

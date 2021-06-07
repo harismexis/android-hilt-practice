@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_background_color"
-    tools:context=".presentation.screens.home.ui.fragment.HomeFragment">
+    tools:context="com.harismexis.hiltproject.presentation.screens.home.ui.fragment.HomeFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.screens.home.ui.fragment.HomeFragment">
+        tools:context="com.harismexis.hiltproject.presentation.screens.home.ui.fragment.HomeFragment">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
                         android:layout_gravity="start"
                         tools:text="Toolbar title" />
 
-                    <com.harismexis.breakingbad.presentation.widget.CustomSearchView
+                    <com.harismexis.hiltproject.presentation.widget.CustomSearchView
                         android:id="@+id/searchView"
                         style="@style/SearchViewIconStyle"
                         android:layout_width="wrap_content"

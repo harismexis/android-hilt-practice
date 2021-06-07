@@ -2,7 +2,7 @@ package com.harismexis.breakingbad.parser
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
+import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHero
 import java.lang.reflect.Type
 import java.util.*
 
