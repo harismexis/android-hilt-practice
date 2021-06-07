@@ -1,10 +1,10 @@
 package com.harismexis.breakingbad.framework.extensions.actor
 
 import com.harismexis.breakingbad.datamodel.domain.Actor
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteActor
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteCharacters
+import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
+import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHeros
 
-fun RemoteCharacters?.toItems(): List<Actor> {
+fun RemoteHeros?.toItems(): List<Actor> {
     val items = mutableListOf<Actor>()
     if (this == null) return items.toList()
     if(this.results.isNullOrEmpty()) return items.toList()
@@ -15,7 +15,7 @@ fun RemoteCharacters?.toItems(): List<Actor> {
     return items.toList()
 }
 
-private fun RemoteActor.toItem(id: Int): Actor {
+private fun RemoteHero.toItem(id: Int): Actor {
     return Actor(
         id,
         this.name,

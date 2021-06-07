@@ -1,6 +1,6 @@
 package com.harismexis.breakingbad.framework.datasource.network.model
 
-data class RemoteActor(
+data class RemoteHero(
     val id: Int?, // 1
     val name: String?, // "Rick Sanchez"
     val status: String?, // "Alive"

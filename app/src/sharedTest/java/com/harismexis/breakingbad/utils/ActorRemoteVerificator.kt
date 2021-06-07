@@ -1,16 +1,16 @@
 package com.harismexis.breakingbad.utils
 
 import com.harismexis.breakingbad.datamodel.domain.Actor
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteActor
+import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
 import org.junit.Assert
 
 class ActorRemoteVerificator {
 
     fun verifyActorsAgainstRemoteActors(
         actual: List<Actor>,
-        remoteActors: List<RemoteActor?>
+        remoteHeroes: List<RemoteHero?>
     ) {
-        remoteActors.forEachIndexed lit@{ _, remoteActor ->
+        remoteHeroes.forEachIndexed lit@{ _, remoteActor ->
             if (remoteActor == null) return@lit
             actual.forEachIndexed { _, actor ->
                 remoteActor.id?.let {
@@ -25,16 +25,16 @@ class ActorRemoteVerificator {
 
     private fun verifyActorAgainstRemoteActor(
         actual: Actor,
-        remoteActor: RemoteActor
+        remoteHero: RemoteHero
     ) {
-        Assert.assertEquals(remoteActor.id, actual.id)
-        Assert.assertEquals(remoteActor.name, actual.name)
-        Assert.assertEquals(remoteActor.status, actual.status)
-        Assert.assertEquals(remoteActor.species, actual.species)
-        Assert.assertEquals(remoteActor.status, actual.status)
-        Assert.assertEquals(remoteActor.type, actual.type)
-        Assert.assertEquals(remoteActor.gender, actual.gender)
-        Assert.assertEquals(remoteActor.image, actual.image)
+        Assert.assertEquals(remoteHero.id, actual.id)
+        Assert.assertEquals(remoteHero.name, actual.name)
+        Assert.assertEquals(remoteHero.status, actual.status)
+        Assert.assertEquals(remoteHero.species, actual.species)
+        Assert.assertEquals(remoteHero.status, actual.status)
+        Assert.assertEquals(remoteHero.type, actual.type)
+        Assert.assertEquals(remoteHero.gender, actual.gender)
+        Assert.assertEquals(remoteHero.image, actual.image)
     }
 
 }

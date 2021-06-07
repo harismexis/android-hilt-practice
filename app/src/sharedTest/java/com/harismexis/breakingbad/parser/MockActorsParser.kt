@@ -2,7 +2,7 @@ package com.harismexis.breakingbad.parser
 
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.harismexis.breakingbad.framework.datasource.network.model.RemoteActor
+import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
 import java.lang.reflect.Type
 import java.util.*
 
@@ -76,25 +76,25 @@ class MockActorsParser(private val parser: BaseFileParser) {
 //        getMockRemoteActorsSearchByNameLikeSala().toItems()
 
     // remote models
-    fun getMockRemoteActorsWhenJsonHasAllIdsValid(): List<RemoteActor> =
+    fun getMockRemoteActorsWhenJsonHasAllIdsValid(): List<RemoteHero> =
         getMockRemoteActors(getMockDataAllIdsValid())
 
-    fun getMockRemoteActorsWhenJsonHasSomeInvalidIds(): List<RemoteActor> =
+    fun getMockRemoteActorsWhenJsonHasSomeInvalidIds(): List<RemoteHero> =
         getMockRemoteActors(getMockDataSomeIdsInvalid())
 
-    fun getMockRemoteActorsWhenJsonHasSomeEmptyItems(): List<RemoteActor> =
+    fun getMockRemoteActorsWhenJsonHasSomeEmptyItems(): List<RemoteHero> =
         getMockRemoteActors(getMockDataSomeItemsEmpty())
 
-    fun getMockRemoteActorsWhenJsonHasAllIdsInvalid(): List<RemoteActor> =
+    fun getMockRemoteActorsWhenJsonHasAllIdsInvalid(): List<RemoteHero> =
         getMockRemoteActors(getMockDataAllIdsInvalid())
 
-    fun getMockRemoteActorsWhenJsonIsEmpty(): List<RemoteActor> =
+    fun getMockRemoteActorsWhenJsonIsEmpty(): List<RemoteHero> =
         getMockRemoteActors(getMockDataEmptyJsonArray())
 
-    fun getMockRemoteActorsSearchByNameLikeWalter(): List<RemoteActor> =
+    fun getMockRemoteActorsSearchByNameLikeWalter(): List<RemoteHero> =
         getMockRemoteActors(getMockDataSearchByNameLikeWalter())
 
-    fun getMockRemoteActorsSearchByNameLikeSala(): List<RemoteActor> =
+    fun getMockRemoteActorsSearchByNameLikeSala(): List<RemoteHero> =
         getMockRemoteActors(getMockDataSearchByNameLikeSala())
 
     // raw json string
@@ -122,13 +122,13 @@ class MockActorsParser(private val parser: BaseFileParser) {
     // utils
     private fun getMockRemoteActors(
         text: String
-    ): List<RemoteActor> {
+    ): List<RemoteHero> {
         return convertToRemoteActors(text)
     }
 
-    private fun convertToRemoteActors(jsonFeed: String?): List<RemoteActor> {
+    private fun convertToRemoteActors(jsonFeed: String?): List<RemoteHero> {
         val gson = GsonBuilder().setLenient().create()
-        val type: Type = object : TypeToken<ArrayList<RemoteActor>>() {}.type
+        val type: Type = object : TypeToken<ArrayList<RemoteHero>>() {}.type
         return gson.fromJson(jsonFeed, type)
     }
 

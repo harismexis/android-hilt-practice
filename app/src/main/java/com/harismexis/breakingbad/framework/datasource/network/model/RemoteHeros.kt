@@ -1,6 +1,6 @@
 package com.harismexis.breakingbad.framework.datasource.network.model
 
-data class RemoteCharacters(
+data class RemoteHeros(
     val info: RemoteInfo,
-    val results: List<RemoteActor>,
+    val results: List<RemoteHero>,
 )
