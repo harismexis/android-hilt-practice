@@ -11,7 +11,7 @@ import com.harismexis.breakingbad.framework.event.Event
 import com.harismexis.breakingbad.framework.extensions.getErrorMessage
 import com.harismexis.breakingbad.framework.util.functional.Action1
 import com.harismexis.breakingbad.framework.util.network.ConnectivityMonitorSimple
-import com.harismexis.breakingbad.presentation.result.ActorsResult
+import com.harismexis.breakingbad.presentation.result.HerosResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,8 +25,8 @@ class HomeViewModel @Inject constructor(
 
     private val TAG = HomeViewModel::class.qualifiedName
 
-    private val mActorsResult = MutableLiveData<ActorsResult>()
-    val actorsResult: LiveData<ActorsResult>
+    private val mActorsResult = MutableLiveData<HerosResult>()
+    val herosResult: LiveData<HerosResult>
         get() = mActorsResult
 
     private val mShowErrorMessage = MutableLiveData<Event<String>>()
@@ -58,11 +58,11 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val items = actorRemote.getActors(name)
-                mActorsResult.value = ActorsResult.ActorsSuccess(items)
+                mActorsResult.value = HerosResult.Success(items)
                 // actorLocal.updateActors(items)
             } catch (e: Exception) {
                 Log.d(TAG, e.getErrorMessage())
-                mActorsResult.value = ActorsResult.ActorsError(e)
+                mActorsResult.value = HerosResult.Error(e)
                 mShowErrorMessage.value = Event(e.getErrorMessage())
             }
         }

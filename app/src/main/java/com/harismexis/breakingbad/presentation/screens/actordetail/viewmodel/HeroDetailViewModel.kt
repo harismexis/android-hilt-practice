@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.harismexis.breakingbad.datamodel.repo.HeroLocalRepo
 import com.harismexis.breakingbad.framework.extensions.getErrorMessage
-import com.harismexis.breakingbad.presentation.result.ActorDetailResult
+import com.harismexis.breakingbad.presentation.result.HeroDetailResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,8 +19,8 @@ class HeroDetailViewModel @Inject constructor(
 
     private val tag = HeroDetailViewModel::class.qualifiedName
 
-    private val mActorDetailResult = MutableLiveData<ActorDetailResult>()
-    val actorDetailResult: LiveData<ActorDetailResult>
+    private val mActorDetailResult = MutableLiveData<HeroDetailResult>()
+    val heroDetailResult: LiveData<HeroDetailResult>
         get() = mActorDetailResult
 
     fun retrieveActorById(itemId: Int) {
@@ -28,11 +28,11 @@ class HeroDetailViewModel @Inject constructor(
             try {
                 val item = heroLocal.getActor(itemId)
                 item?.let {
-                    mActorDetailResult.value = ActorDetailResult.ActorSuccess(item)
+                    mActorDetailResult.value = HeroDetailResult.Success(item)
                 }
             } catch (e: Exception) {
                 Log.d(tag, e.getErrorMessage())
-                mActorDetailResult.value = ActorDetailResult.ActorError(e.getErrorMessage())
+                mActorDetailResult.value = HeroDetailResult.Error(e.getErrorMessage())
             }
         }
     }

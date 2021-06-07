@@ -15,7 +15,7 @@ import com.harismexis.breakingbad.framework.extensions.populateWithGlide
 import com.harismexis.breakingbad.framework.extensions.setTextOrUnknown
 import com.harismexis.breakingbad.framework.extensions.showToast
 import com.harismexis.breakingbad.presentation.base.BaseFragment
-import com.harismexis.breakingbad.presentation.result.ActorDetailResult
+import com.harismexis.breakingbad.presentation.result.HeroDetailResult
 import com.harismexis.breakingbad.presentation.screens.actordetail.viewmodel.HeroDetailViewModel
 
 class HeroDetailFragment : BaseFragment() {
@@ -64,10 +64,10 @@ class HeroDetailFragment : BaseFragment() {
     override fun getRootView() = binding?.root
 
     private fun observeLiveData() {
-        viewModel.actorDetailResult.observe(viewLifecycleOwner, {
+        viewModel.heroDetailResult.observe(viewLifecycleOwner, {
             when (it) {
-                is ActorDetailResult.ActorSuccess -> populate(it.item)
-                is ActorDetailResult.ActorError -> populateError(it.error)
+                is HeroDetailResult.Success -> populate(it.item)
+                is HeroDetailResult.Error -> populateError(it.error)
             }
         })
     }

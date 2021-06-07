@@ -15,7 +15,7 @@ import com.harismexis.breakingbad.framework.event.EventObserver
 import com.harismexis.breakingbad.framework.extensions.showToast
 import com.harismexis.breakingbad.framework.util.ui.hideKeyboard
 import com.harismexis.breakingbad.presentation.base.BaseFragment
-import com.harismexis.breakingbad.presentation.result.ActorsResult
+import com.harismexis.breakingbad.presentation.result.HerosResult
 import com.harismexis.breakingbad.presentation.screens.home.ui.adapter.HerosAdapter
 import com.harismexis.breakingbad.presentation.screens.home.ui.viewholder.HeroViewHolder
 import com.harismexis.breakingbad.presentation.screens.home.viewmodel.HomeViewModel
@@ -91,10 +91,10 @@ class HomeFragment : BaseFragment(), HeroViewHolder.ActorClickListener,
     }
 
     private fun observeLiveData() {
-        viewModel.actorsResult.observe(viewLifecycleOwner, {
+        viewModel.herosResult.observe(viewLifecycleOwner, {
             when (it) {
-                is ActorsResult.ActorsSuccess -> populate(it.items)
-                is ActorsResult.ActorsError -> populateError(it.error)
+                is HerosResult.Success -> populate(it.items)
+                is HerosResult.Error -> populateError(it.error)
             }
         })
 
