@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "rick_and_morty_character_table")
-data class LocalActor(
+data class LocalHero(
     @PrimaryKey @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "name") val name: String?,
     @ColumnInfo(name = "status") val status: String?,

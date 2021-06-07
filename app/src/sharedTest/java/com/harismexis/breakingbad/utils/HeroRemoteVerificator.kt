@@ -4,7 +4,7 @@ import com.harismexis.breakingbad.datamodel.domain.Hero
 import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
 import org.junit.Assert
 
-class ActorRemoteVerificator {
+class HeroRemoteVerificator {
 
     fun verifyActorsAgainstRemoteActors(
         actual: List<Hero>,

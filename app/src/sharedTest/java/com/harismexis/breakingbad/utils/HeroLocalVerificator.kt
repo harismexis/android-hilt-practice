@@ -1,17 +1,17 @@
 package com.harismexis.breakingbad.utils
 
 import com.harismexis.breakingbad.datamodel.domain.Hero
-import com.harismexis.breakingbad.framework.datasource.database.table.LocalActor
+import com.harismexis.breakingbad.framework.datasource.database.table.LocalHero
 import org.junit.Assert
 
-class ActorLocalVerificator {
+class HeroLocalVerificator {
 
     fun verifyActorsAgainstLocalActors(
         actual: List<Hero>,
-        localActors: List<LocalActor>
+        localHeroes: List<LocalHero>
     ) {
-        verifyListsHaveSameSize(actual, localActors)
-        localActors.forEachIndexed { index, localActor ->
+        verifyListsHaveSameSize(actual, localHeroes)
+        localHeroes.forEachIndexed { index, localActor ->
             val actor = actual[index]
             verifyActorAgainstLocalActor(actor, localActor)
         }
@@ -19,19 +19,19 @@ class ActorLocalVerificator {
 
     private fun verifyActorAgainstLocalActor(
         actual: Hero,
-        localActor: LocalActor
+        localHero: LocalHero
     ) {
-        Assert.assertEquals(localActor.id, actual.id)
-        Assert.assertEquals(localActor.name, actual.name)
-        Assert.assertEquals(localActor.status, actual.status)
-        Assert.assertEquals(localActor.species, actual.species)
-        Assert.assertEquals(localActor.type, actual.type)
-        Assert.assertEquals(localActor.gender, actual.gender)
-        Assert.assertEquals(localActor.image, actual.image)
+        Assert.assertEquals(localHero.id, actual.id)
+        Assert.assertEquals(localHero.name, actual.name)
+        Assert.assertEquals(localHero.status, actual.status)
+        Assert.assertEquals(localHero.species, actual.species)
+        Assert.assertEquals(localHero.type, actual.type)
+        Assert.assertEquals(localHero.gender, actual.gender)
+        Assert.assertEquals(localHero.image, actual.image)
     }
 
     fun verifyLocalActorsAgainstActors(
-        actual: List<LocalActor>,
+        actual: List<LocalHero>,
         heroes: List<Hero>
     ) {
         verifyListsHaveSameSize(actual, heroes)
@@ -42,7 +42,7 @@ class ActorLocalVerificator {
     }
 
     private fun verifyLocalActorAgainstActor(
-        actual: LocalActor,
+        actual: LocalHero,
         hero: Hero
     ) {
         Assert.assertEquals(hero.id, actual.id)

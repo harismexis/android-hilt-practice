@@ -1,7 +1,7 @@
 package com.harismexis.breakingbad.datamodel.repo
 
 import com.harismexis.breakingbad.datamodel.domain.Hero
-import com.harismexis.breakingbad.framework.datasource.database.data.BreakingBadLocalDao
+import com.harismexis.breakingbad.framework.datasource.database.data.RickAndMortyLocalDao
 import com.harismexis.breakingbad.framework.extensions.actor.toItem
 import com.harismexis.breakingbad.framework.extensions.actor.toItems
 import com.harismexis.breakingbad.framework.extensions.actor.toLocalItems
@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 @Singleton
 class HeroLocalRepo @Inject constructor(
-    private val dao: BreakingBadLocalDao
+    private val dao: RickAndMortyLocalDao
 ) {
     suspend fun updateActors(items: List<Hero>) {
         dao.deleteAllActors()

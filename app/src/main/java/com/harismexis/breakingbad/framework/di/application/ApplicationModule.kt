@@ -1,8 +1,8 @@
 package com.harismexis.breakingbad.framework.di.application
 
 import android.content.Context
-import com.harismexis.breakingbad.framework.datasource.database.BreakingBadDatabase
-import com.harismexis.breakingbad.framework.datasource.database.data.BreakingBadLocalDao
+import com.harismexis.breakingbad.framework.datasource.database.RickAndMortyDatabase
+import com.harismexis.breakingbad.framework.datasource.database.data.RickAndMortyLocalDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,8 +16,8 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideLocalDao(@ApplicationContext app: Context): BreakingBadLocalDao {
-        return BreakingBadDatabase.getDatabase(app).getDao()
+    fun provideLocalDao(@ApplicationContext app: Context): RickAndMortyLocalDao {
+        return RickAndMortyDatabase.getDatabase(app).getDao()
     }
 
 }
