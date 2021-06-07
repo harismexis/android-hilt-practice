@@ -3,7 +3,7 @@ package com.harismexis.breakingbad.framework.di.api
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.harismexis.breakingbad.BuildConfig
-import com.harismexis.breakingbad.framework.datasource.network.api.BreakingBadApi
+import com.harismexis.breakingbad.framework.datasource.network.api.RickAndMortyApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,8 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class BreakingBadApiModule {
 
     @Provides
-    fun provideBreakingBadApi(retrofit: Retrofit): BreakingBadApi {
-        return retrofit.create(BreakingBadApi::class.java)
+    fun provideBreakingBadApi(retrofit: Retrofit): RickAndMortyApi {
+        return retrofit.create(RickAndMortyApi::class.java)
     }
 
     @Provides

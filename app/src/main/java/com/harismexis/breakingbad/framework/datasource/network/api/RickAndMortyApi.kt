@@ -4,7 +4,7 @@ import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHeros
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface BreakingBadApi {
+interface RickAndMortyApi {
 
     @GET("character")
     suspend fun getCharactersByName(

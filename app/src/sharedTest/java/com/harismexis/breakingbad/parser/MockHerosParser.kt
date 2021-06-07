@@ -6,7 +6,7 @@ import com.harismexis.breakingbad.framework.datasource.network.model.RemoteHero
 import java.lang.reflect.Type
 import java.util.*
 
-class MockActorsParser(private val parser: BaseFileParser) {
+class MockHerosParser(private val parser: BaseFileParser) {
 
     companion object {
 
