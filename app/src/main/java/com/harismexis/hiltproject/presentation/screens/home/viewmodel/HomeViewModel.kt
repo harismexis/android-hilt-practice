@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.hiltproject.datamodel.repo.HeroLocalRepo
-import com.harismexis.hiltproject.datamodel.repo.HeroRemoteRepo
+import com.harismexis.hiltproject.datamodel.repository.HeroLocalRepository
+import com.harismexis.hiltproject.datamodel.repository.HeroRemoteRepository
 import com.harismexis.hiltproject.framework.event.Event
 import com.harismexis.hiltproject.framework.extensions.getErrorMessage
 import com.harismexis.hiltproject.framework.util.functional.Action1
@@ -18,8 +18,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val heroRemote: HeroRemoteRepo,
-    private val heroLocal: HeroLocalRepo,
+    private val heroRemote: HeroRemoteRepository,
+    private val heroLocal: HeroLocalRepository,
     private val connectivity: ConnectivityMonitorSimple,
 ) : ViewModel() {
 

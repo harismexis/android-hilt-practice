@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.hiltproject.datamodel.repo.HeroLocalRepo
+import com.harismexis.hiltproject.datamodel.repository.HeroLocalRepository
 import com.harismexis.hiltproject.framework.extensions.getErrorMessage
 import com.harismexis.hiltproject.presentation.result.HeroDetailResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HeroDetailViewModel @Inject constructor(
-    private val heroLocal: HeroLocalRepo,
+    private val heroLocal: HeroLocalRepository,
 ) : ViewModel() {
 
     private val tag = HeroDetailViewModel::class.qualifiedName

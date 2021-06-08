@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.datamodel.repo
+package com.harismexis.hiltproject.datamodel.repository
 
 import com.harismexis.hiltproject.datamodel.domain.Hero
 import com.harismexis.hiltproject.framework.datasource.database.data.RickAndMortyLocalDao
@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class HeroLocalRepo @Inject constructor(
+class HeroLocalRepository @Inject constructor(
     private val dao: RickAndMortyLocalDao
 ) {
     suspend fun updateHeros(items: List<Hero>) {
