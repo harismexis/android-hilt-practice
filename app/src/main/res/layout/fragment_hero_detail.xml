@@ -30,7 +30,7 @@
                     android:id="@+id/toolbar_title"
                     style="@style/ToolbarText"
                     android:layout_gravity="start"
-                    android:text="@string/screen_actor_detail_label"
+                    android:text="@string/screen_hero_detail_label"
                     tools:text="Toolbar title" />
 
             </androidx.appcompat.widget.Toolbar>
@@ -42,8 +42,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/actor_detail_root_padding"
-        android:paddingBottom="@dimen/actor_detail_padding_bottom"
+        android:paddingHorizontal="@dimen/hero_detail_root_padding"
+        android:paddingBottom="@dimen/hero_detail_padding_bottom"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <include
