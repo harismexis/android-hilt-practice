@@ -1,4 +1,4 @@
-package com.harismexis.breakingbad.parser
+package com.harismexis.hiltproject.parser
 
 abstract class BaseFileParser {
 

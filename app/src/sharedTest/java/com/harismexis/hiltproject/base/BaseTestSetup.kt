@@ -1,4 +1,4 @@
-package com.harismexis.breakingbad.base
+package com.harismexis.hiltproject.base
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import org.junit.Rule
