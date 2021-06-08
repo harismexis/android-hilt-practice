@@ -25,9 +25,9 @@ class HomeViewModel @Inject constructor(
 
     private val TAG = HomeViewModel::class.qualifiedName
 
-    private val mActorsResult = MutableLiveData<HerosResult>()
+    private val mHerosResult = MutableLiveData<HerosResult>()
     val herosResult: LiveData<HerosResult>
-        get() = mActorsResult
+        get() = mHerosResult
 
     private val mShowErrorMessage = MutableLiveData<Event<String>>()
     val showErrorMessage : LiveData<Event<String>>
@@ -57,12 +57,12 @@ class HomeViewModel @Inject constructor(
     private fun fetchRemoteHeros(name: String? = null) {
         viewModelScope.launch {
             try {
-                val items = heroRemote.getActors(name)
-                mActorsResult.value = HerosResult.Success(items)
+                val items = heroRemote.getHeros(name)
+                mHerosResult.value = HerosResult.Success(items)
                 // heroLocal.updateHeros(items)
             } catch (e: Exception) {
                 Log.d(TAG, e.getErrorMessage())
-                mActorsResult.value = HerosResult.Error(e)
+                mHerosResult.value = HerosResult.Error(e)
                 mShowErrorMessage.value = Event(e.getErrorMessage())
             }
         }

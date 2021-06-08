@@ -8,8 +8,8 @@ import javax.inject.Singleton
 @Singleton
 class RickAndMortyRemoteDao @Inject constructor(private val api: RickAndMortyApi) {
 
-    suspend fun getActors(name: String? = null): RemoteHeros?? {
-        return api.getCharactersByName(name)
+    suspend fun getHeros(name: String? = null): RemoteHeros?? {
+        return api.getHeros(name)
     }
 
 }

@@ -19,20 +19,20 @@ class HeroDetailViewModel @Inject constructor(
 
     private val tag = HeroDetailViewModel::class.qualifiedName
 
-    private val mActorDetailResult = MutableLiveData<HeroDetailResult>()
+    private val mHeroDetailResult = MutableLiveData<HeroDetailResult>()
     val heroDetailResult: LiveData<HeroDetailResult>
-        get() = mActorDetailResult
+        get() = mHeroDetailResult
 
     fun getHeroById(itemId: Int) {
         viewModelScope.launch {
             try {
                 val item = heroLocal.getHero(itemId)
                 item?.let {
-                    mActorDetailResult.value = HeroDetailResult.Success(item)
+                    mHeroDetailResult.value = HeroDetailResult.Success(item)
                 }
             } catch (e: Exception) {
                 Log.d(tag, e.getErrorMessage())
-                mActorDetailResult.value = HeroDetailResult.Error(e.getErrorMessage())
+                mHeroDetailResult.value = HeroDetailResult.Error(e.getErrorMessage())
             }
         }
     }

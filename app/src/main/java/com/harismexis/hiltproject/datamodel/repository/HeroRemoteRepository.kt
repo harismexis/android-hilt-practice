@@ -10,6 +10,6 @@ import javax.inject.Singleton
 data class HeroRemoteRepository @Inject constructor(
     private val dao: RickAndMortyRemoteDao
 ) {
-    suspend fun getActors(name: String? = null): List<Hero> = dao.getActors(name).toItems()
+    suspend fun getHeros(name: String? = null): List<Hero> = dao.getHeros(name).toItems()
 
 }
