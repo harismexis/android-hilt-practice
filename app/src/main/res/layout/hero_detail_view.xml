@@ -30,7 +30,7 @@
         android:id="@+id/txt_status_label"
         style="@style/ItemDetailLabel"
         android:layout_marginTop="@dimen/hero_detail_txt_label_margin_top"
-        android:text="@string/label_nickname"
+        android:text="@string/label_status"
         tools:text="Status label" />
 
     <TextView
@@ -43,7 +43,7 @@
         android:id="@+id/txt_species_label"
         style="@style/ItemDetailLabel"
         android:layout_marginTop="@dimen/hero_detail_txt_label_margin_top"
-        android:text="@string/label_portrayed"
+        android:text="@string/label_species"
         tools:text="Species label" />
 
     <TextView
@@ -56,7 +56,7 @@
         android:id="@+id/txt_type_label"
         style="@style/ItemDetailLabel"
         android:layout_marginTop="@dimen/hero_detail_txt_label_margin_top"
-        android:text="@string/label_occupation"
+        android:text="@string/label_type"
         tools:text="Type label" />
 
     <TextView
@@ -69,7 +69,7 @@
         android:id="@+id/txt_gender_label"
         style="@style/ItemDetailLabel"
         android:layout_marginTop="@dimen/hero_detail_txt_label_margin_top"
-        android:text="@string/label_birthday"
+        android:text="@string/label_gender"
         tools:text="Gender label" />
 
     <TextView
