@@ -18,17 +18,17 @@ class MockHerosParser(private val parser: BaseFileParser) {
     companion object {
 
         const val EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID = 10
-        const val EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID = 2
+        const val EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID = 7
         const val EXPECTED_NUM_HEROS_WHEN_SOME_EMPTY = 8
         const val EXPECTED_NUM_HEROS_WHEN_NO_DATA = 0
 
-        const val FILE_FIVE_VALID_HEROS =
+        const val FILE_10_VALID_HEROS =
             "remote-10-valid-heros.json"
-        const val FILE_FIVE_HEROS_BUT_THREE_IDS_INVALID =
+        const val FILE_10_HEROS_BUT_3_IDS_INVALID =
             "remote-10-heros-3-ids-invalid.json"
-        const val FILE_FIVE_HEROS_BUT_TWO_EMPTY =
+        const val FILE_10_HEROS_BUT_TWO_EMPTY =
             "remote-10-heros-2-items-empty.json"
-        const val FILE_FIVE_HEROS_ALL_IDS_INVALID =
+        const val FILE_10_HEROS_ALL_IDS_INVALID =
             "remote-10-heros-all-ids-invalid.json"
         const val FILE_EMPTY_JSON =
             "remote-empty.json"
@@ -82,16 +82,16 @@ class MockHerosParser(private val parser: BaseFileParser) {
 
     // raw json string
     private fun getMockDataAllIdsValid(): String =
-        parser.getFileAsString(FILE_FIVE_VALID_HEROS)
+        parser.getFileAsString(FILE_10_VALID_HEROS)
 
     private fun getMockDataSomeIdsInvalid(): String =
-        parser.getFileAsString(FILE_FIVE_HEROS_BUT_THREE_IDS_INVALID)
+        parser.getFileAsString(FILE_10_HEROS_BUT_3_IDS_INVALID)
 
     private fun getMockDataSomeItemsEmpty(): String =
-        parser.getFileAsString(FILE_FIVE_HEROS_BUT_TWO_EMPTY)
+        parser.getFileAsString(FILE_10_HEROS_BUT_TWO_EMPTY)
 
     private fun getMockDataAllIdsInvalid(): String =
-        parser.getFileAsString(FILE_FIVE_HEROS_ALL_IDS_INVALID)
+        parser.getFileAsString(FILE_10_HEROS_ALL_IDS_INVALID)
 
     private fun getMockDataEmptyJsonArray(): String =
         parser.getFileAsString(FILE_EMPTY_JSON)
