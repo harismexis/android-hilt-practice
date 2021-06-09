@@ -11,10 +11,11 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.harismexis.hiltproject.R
 import com.harismexis.hiltproject.datamodel.domain.Hero
+import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_3_IDS_INVALID
+import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_6_IDS_INVALID
 import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID
 import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_NO_DATA
 import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_SOME_EMPTY
-import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID
 import com.harismexis.hiltproject.presentation.result.HerosResult
 import com.harismexis.hiltproject.presentation.screens.home.ui.activity.MainActivity
 import com.harismexis.hiltproject.presentation.screens.home.viewmodel.HomeViewModel
@@ -53,14 +54,24 @@ class HomeScreenTest: InstrumentedTestSetup() {
         verifyRecycler(EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID)
     }
 
-    //@Test
-    fun herosFeedHasSomeInvalidIds_listHasExpectedItems() {
+    @Test
+    fun herosFeedHas3InvalidIds_listHasExpectedItems() {
         // given
-        mockInitialResults(herosParser.getMockHerosWhenJsonHasSomeInvalidIds())
+        mockInitialResults(herosParser.getMockHerosWhenJsonHas3InvalidIds())
         // when
         val scenario = launchActivity<MainActivity>()
         // then
-        verifyRecycler(EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID)
+        verifyRecycler(EXPECTED_NUM_HEROS_WHEN_3_IDS_INVALID)
+    }
+
+    @Test
+    fun herosFeedHas6InvalidIds_listHasExpectedItems() {
+        // given
+        mockInitialResults(herosParser.getMockHerosWhenJsonHas6InvalidIds())
+        // when
+        val scenario = launchActivity<MainActivity>()
+        // then
+        verifyRecycler(EXPECTED_NUM_HEROS_WHEN_6_IDS_INVALID)
     }
 
     @Test

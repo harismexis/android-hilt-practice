@@ -71,14 +71,11 @@ dependencies {
     implementation project(':core')
     implementation libraries.values()
     implementation rxJavaDependencies.values()
-    // implementation daggerDependancies.values()
     implementation navigationDependencies.values()
     debugImplementation librariesDebug.values()
     api glideDependencies.values()
     kapt librariesKapt.values()
     testImplementation testLibraries.values()
     androidTestImplementation androidTestLibraries.values()
-    //kaptAndroidTest librariesKapt.dagger_compiler
-    //kaptAndroidTest librariesKapt.dagger_android_processor
     kaptAndroidTest librariesKapt.hilt_android_compiler
 }

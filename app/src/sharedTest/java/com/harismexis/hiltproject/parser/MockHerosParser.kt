@@ -5,11 +5,9 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.datasource.database.table.LocalHero
 import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHero
 import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHeros
 import com.harismexis.hiltproject.framework.extensions.hero.toItems
-import com.harismexis.hiltproject.framework.extensions.hero.toLocalItems
 import java.lang.reflect.Type
 import java.util.*
 
@@ -18,12 +16,15 @@ class MockHerosParser(private val parser: BaseFileParser) {
     companion object {
 
         const val EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID = 10
-        const val EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID = 7
+        const val EXPECTED_NUM_HEROS_WHEN_3_IDS_INVALID = 7
+        const val EXPECTED_NUM_HEROS_WHEN_6_IDS_INVALID = 4
         const val EXPECTED_NUM_HEROS_WHEN_SOME_EMPTY = 8
         const val EXPECTED_NUM_HEROS_WHEN_NO_DATA = 0
 
         const val FILE_10_VALID_HEROS =
             "remote-10-valid-heros.json"
+        const val FILE_10_HEROS_BUT_6_IDS_INVALID =
+            "remote-10-heros-6-ids-invalid.json"
         const val FILE_10_HEROS_BUT_3_IDS_INVALID =
             "remote-10-heros-3-ids-invalid.json"
         const val FILE_10_HEROS_BUT_TWO_EMPTY =
@@ -34,26 +35,15 @@ class MockHerosParser(private val parser: BaseFileParser) {
             "remote-empty.json"
     }
 
-    // local models
-    fun getMockLocalHero(): LocalHero = getMockLocalHerosWhenJsonHasAllItemsValid()[0]
-
-    fun getMockLocalHerosWhenJsonHasAllItemsValid(): List<LocalHero> =
-        getMockHerosWhenJsonHasAllItemsValid().toLocalItems()
-
-    fun getMockLocalHerosWhenJsonHasSomeInvalidIds(): List<LocalHero> =
-        getMockHerosWhenJsonHasSomeInvalidIds().toLocalItems()
-
-    fun getMockLocalHerosWhenJsonHasAllIdsInvalid(): List<LocalHero> =
-        getMockHerosWhenJsonHasAllIdsInvalid().toLocalItems()
-
     // core models
-    fun getMockHero(): Hero = getMockHerosWhenJsonHasAllItemsValid()[0]
-
     fun getMockHerosWhenJsonHasAllItemsValid(): List<Hero> =
         getMockRemoteHerosWhenJsonHasAllIdsValid().toItems()
 
-    fun getMockHerosWhenJsonHasSomeInvalidIds(): List<Hero> =
-        getMockRemoteHerosWhenJsonHasSomeInvalidIds().toItems()
+    fun getMockHerosWhenJsonHas6InvalidIds(): List<Hero> =
+        getMockRemoteHerosWhenJsonHas6InvalidIds().toItems()
+
+    fun getMockHerosWhenJsonHas3InvalidIds(): List<Hero> =
+        getMockRemoteHerosWhenJsonHas3InvalidIds().toItems()
 
     fun getMockHerosWhenJsonHasSomeEmptyItems(): List<Hero> =
         getMockRemoteHerosWhenJsonHasSomeEmptyItems().toItems()
@@ -68,8 +58,11 @@ class MockHerosParser(private val parser: BaseFileParser) {
     fun getMockRemoteHerosWhenJsonHasAllIdsValid(): RemoteHeros =
         getMockRemoteHeros(getMockDataAllIdsValid())
 
-    fun getMockRemoteHerosWhenJsonHasSomeInvalidIds(): RemoteHeros =
-        getMockRemoteHeros(getMockDataSomeIdsInvalid())
+    fun getMockRemoteHerosWhenJsonHas6InvalidIds(): RemoteHeros =
+        getMockRemoteHeros(getMockData6IdsInvalid())
+
+    fun getMockRemoteHerosWhenJsonHas3InvalidIds(): RemoteHeros =
+        getMockRemoteHeros(getMockData3IdsInvalid())
 
     fun getMockRemoteHerosWhenJsonHasSomeEmptyItems(): RemoteHeros =
         getMockRemoteHeros(getMockDataSomeItemsEmpty())
@@ -84,7 +77,10 @@ class MockHerosParser(private val parser: BaseFileParser) {
     private fun getMockDataAllIdsValid(): String =
         parser.getFileAsString(FILE_10_VALID_HEROS)
 
-    private fun getMockDataSomeIdsInvalid(): String =
+    private fun getMockData6IdsInvalid(): String =
+        parser.getFileAsString(FILE_10_HEROS_BUT_6_IDS_INVALID)
+
+    private fun getMockData3IdsInvalid(): String =
         parser.getFileAsString(FILE_10_HEROS_BUT_3_IDS_INVALID)
 
     private fun getMockDataSomeItemsEmpty(): String =

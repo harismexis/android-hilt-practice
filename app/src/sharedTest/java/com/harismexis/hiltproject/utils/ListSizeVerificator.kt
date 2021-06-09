@@ -21,10 +21,6 @@ fun <T> verifyListSizeWhenAllIdsValid(items: List<T>) {
     verifyListSize(MockHerosParser.EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID, items)
 }
 
-fun <T> verifyListSizeWhenSomeIdsAbsent(items: List<T>) {
-    verifyListSize(MockHerosParser.EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID, items)
-}
-
 fun <T> verifyListSizeWhenSomeItemsEmpty(items: List<T>) {
     verifyListSize(MockHerosParser.EXPECTED_NUM_HEROS_WHEN_SOME_EMPTY, items)
 }
