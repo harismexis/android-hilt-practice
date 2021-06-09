@@ -1,6 +1,7 @@
 package com.harismexis.hiltproject.tests
 
 import androidx.annotation.IdRes
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso
@@ -16,14 +17,15 @@ import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_
 import com.harismexis.hiltproject.parser.MockHerosParser.Companion.EXPECTED_NUM_HEROS_WHEN_SOME_IDS_INVALID
 import com.harismexis.hiltproject.presentation.result.HerosResult
 import com.harismexis.hiltproject.presentation.screens.home.ui.activity.MainActivity
+import com.harismexis.hiltproject.presentation.screens.home.viewmodel.HomeViewModel
 import com.harismexis.hiltproject.setup.base.InstrumentedTestSetup
-import com.harismexis.hiltproject.setup.testutil.MockHomeVmProvider
 import com.harismexis.hiltproject.setup.testutil.RecyclerCountAssertion
 import com.harismexis.hiltproject.setup.testutil.verifyRecyclerItemAt
 import dagger.hilt.android.testing.BindValue
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.every
+import io.mockk.mockk
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
@@ -36,7 +38,8 @@ class HomeScreenTest: InstrumentedTestSetup() {
 
     @BindValue
     @JvmField
-    var mockViewModel = MockHomeVmProvider.mockHomeViewModel
+    var mockViewModel : HomeViewModel = mockk(relaxed = true)
+    var fakeHerosResult = MutableLiveData<HerosResult>()
     private lateinit var mockHeros: List<Hero>
     private lateinit var herosSuccess: HerosResult.Success
 
@@ -94,9 +97,9 @@ class HomeScreenTest: InstrumentedTestSetup() {
         mockHeros = mockData
         herosSuccess = HerosResult.Success(mockHeros)
         every { mockViewModel.fetchInitialHeros() } answers {
-            MockHomeVmProvider.fakeHerosResult.value = herosSuccess
+            fakeHerosResult.value = herosSuccess
         }
-        every { mockViewModel.herosResult } returns MockHomeVmProvider.fakeHerosResult
+        every { mockViewModel.herosResult } returns fakeHerosResult
     }
 
     private fun verifyRecycler(expectedNumberOfItems: Int) {
