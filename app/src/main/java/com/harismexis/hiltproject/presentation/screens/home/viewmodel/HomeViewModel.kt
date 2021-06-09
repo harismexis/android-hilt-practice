@@ -18,9 +18,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val heroRemote: HeroRemoteRepository,
-    private val heroLocal: HeroLocalRepository,
-    private val connectivity: ConnectivityMonitorSimple,
+    val heroRemote: HeroRemoteRepository,
+    val heroLocal: HeroLocalRepository,
+    val connectivity: ConnectivityMonitorSimple,
 ) : ViewModel() {
 
     private val TAG = HomeViewModel::class.qualifiedName

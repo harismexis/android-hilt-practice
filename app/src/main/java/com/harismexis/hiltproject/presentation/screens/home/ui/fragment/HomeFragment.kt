@@ -23,7 +23,7 @@ import com.harismexis.hiltproject.presentation.screens.home.viewmodel.HomeViewMo
 class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
     android.widget.SearchView.OnQueryTextListener {
 
-    private val viewModel: HomeViewModel by viewModels()
+    val viewModel: HomeViewModel by viewModels()
     private var binding: FragmentHomeBinding? = null
     private lateinit var adapter: HerosAdapter
     private var uiModels: MutableList<Hero> = mutableListOf()

@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.utils
+package com.harismexis.breakingbad.utils
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
