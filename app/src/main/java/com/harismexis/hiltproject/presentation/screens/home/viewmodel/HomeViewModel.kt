@@ -9,8 +9,6 @@ import com.harismexis.hiltproject.datamodel.repository.HeroLocalRepository
 import com.harismexis.hiltproject.datamodel.repository.HeroRemoteRepository
 import com.harismexis.hiltproject.framework.event.Event
 import com.harismexis.hiltproject.framework.extensions.getErrorMessage
-import com.harismexis.hiltproject.framework.util.functional.Action1
-import com.harismexis.hiltproject.framework.util.network.ConnectivityMonitorSimple
 import com.harismexis.hiltproject.presentation.result.HerosResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -19,8 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val heroRemote: HeroRemoteRepository,
-    val heroLocal: HeroLocalRepository,
-    val connectivity: ConnectivityMonitorSimple,
+    val heroLocal: HeroLocalRepository
 ) : ViewModel() {
 
     private val TAG = HomeViewModel::class.qualifiedName
@@ -35,23 +32,13 @@ class HomeViewModel @Inject constructor(
 
     private var searchQuery: String? = null
 
-    fun fetchInitialHeros() {
-        if (connectivity.isOnline()) {
-            fetchRemoteHeros(searchQuery)
-        } else {
-
-        }
+    fun fetchHeros() {
+        fetchRemoteHeros(searchQuery)
     }
 
     fun updateSearchQuery(query: String?) {
         searchQuery = query
         fetchRemoteHeros(query)
-    }
-
-    fun refresh(callback: Action1<Boolean>) {
-        val canRefresh = connectivity.isOnline()
-        callback.call(canRefresh)
-        if (canRefresh) fetchRemoteHeros(searchQuery)
     }
 
     private fun fetchRemoteHeros(name: String? = null) {

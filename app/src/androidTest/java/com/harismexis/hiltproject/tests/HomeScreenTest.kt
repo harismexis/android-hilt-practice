@@ -107,7 +107,7 @@ class HomeScreenTest: InstrumentedTestSetup() {
     private fun mockInitialResults(mockData: List<Hero>) {
         mockHeros = mockData
         herosSuccess = HerosResult.Success(mockHeros)
-        every { mockViewModel.fetchInitialHeros() } answers {
+        every { mockViewModel.fetchHeros() } answers {
             fakeHerosResult.value = herosSuccess
         }
         every { mockViewModel.herosResult } returns fakeHerosResult

@@ -45,11 +45,7 @@ class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
     private fun setupSwipeToRefresh() {
         binding?.homeSwipeRefresh?.setOnRefreshListener {
             binding?.homeSwipeRefresh?.isRefreshing = true
-            viewModel.refresh { canRefresh ->
-                if (!canRefresh) {
-                    binding?.homeSwipeRefresh?.isRefreshing = false
-                }
-            }
+            viewModel.fetchHeros()
         }
     }
 
@@ -66,7 +62,7 @@ class HomeFragment : BaseFragment(), HeroViewHolder.HeroClickListener,
 
     override fun onViewCreated() {
         observeLiveData()
-        viewModel.fetchInitialHeros()
+        viewModel.fetchHeros()
     }
 
     private fun setupToolbar() {
