@@ -46,7 +46,7 @@ class HomeViewModel @Inject constructor(
             try {
                 val items = heroRemote.getHeros(name)
                 mHerosResult.value = HerosResult.Success(items)
-                // heroLocal.updateHeros(items)
+                heroLocal.updateHeros(items)
             } catch (e: Exception) {
                 Log.d(TAG, e.getErrorMessage())
                 mHerosResult.value = HerosResult.Error(e)
