@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.hiltproject.datamodel.repository.HeroLocalRepository
-import com.harismexis.hiltproject.datamodel.repository.HeroRemoteRepository
+import com.harismexis.hiltproject.datamodel.repository.HeroLocal
+import com.harismexis.hiltproject.datamodel.repository.HeroRemote
 import com.harismexis.hiltproject.framework.event.Event
 import com.harismexis.hiltproject.framework.extensions.getErrorMessage
 import com.harismexis.hiltproject.presentation.result.HerosResult
@@ -16,8 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    val heroRemote: HeroRemoteRepository,
-    val heroLocal: HeroLocalRepository
+    val heroRemote: HeroRemote,
+    val heroLocal: HeroLocal
 ) : ViewModel() {
 
     private val TAG = HomeViewModel::class.qualifiedName

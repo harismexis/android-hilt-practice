@@ -1,6 +1,7 @@
-package com.harismexis.hiltproject.datamodel.repository
+package com.harismexis.hiltproject.framework.datasource.database.repository
 
 import com.harismexis.hiltproject.datamodel.domain.Hero
+import com.harismexis.hiltproject.datamodel.repository.HeroLocal
 import com.harismexis.hiltproject.framework.datasource.database.data.RickAndMortyLocalDao
 import com.harismexis.hiltproject.framework.extensions.hero.toItem
 import com.harismexis.hiltproject.framework.extensions.hero.toItems
@@ -11,13 +12,13 @@ import javax.inject.Singleton
 @Singleton
 class HeroLocalRepository @Inject constructor(
     private val dao: RickAndMortyLocalDao
-) {
-    suspend fun updateHeros(items: List<Hero>) {
+): HeroLocal {
+    override suspend fun updateHeros(items: List<Hero>) {
         dao.deleteAllHeros()
         dao.insertHeros(items.toLocalItems())
     }
 
-    suspend fun getHero(itemId: Int): Hero? {
+    override suspend fun getHero(itemId: Int): Hero? {
         val localItem = dao.getHeroById(itemId)
         localItem?.let {
             return it.toItem()
@@ -25,7 +26,7 @@ class HeroLocalRepository @Inject constructor(
         return null
     }
 
-    suspend fun getHeros(): List<Hero> {
+    override suspend fun getHeros(): List<Hero> {
         return dao.getAllHeros().toItems()
     }
 
