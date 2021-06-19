@@ -3,7 +3,7 @@ package com.harismexis.hiltproject.framework.extensions
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.harismexis.hiltproject.framework.divider.RecyclerDivider
+import com.harismexis.hiltproject.presentation.widget.divider.RecyclerDivider
 
 fun RecyclerView.setDivider(
     @DrawableRes divider: Int

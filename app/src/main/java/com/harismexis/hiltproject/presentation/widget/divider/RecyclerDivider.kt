@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.framework.divider
+package com.harismexis.hiltproject.presentation.widget.divider
 
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable

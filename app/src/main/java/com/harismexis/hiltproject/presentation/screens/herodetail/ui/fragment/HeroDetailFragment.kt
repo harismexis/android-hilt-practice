@@ -25,7 +25,7 @@ class HeroDetailFragment : BaseFragment() {
     private val viewModel: HeroDetailViewModel by viewModels()
 
     companion object {
-        private const val ARG_HERO_ID = "actorId"
+        private const val ARG_HERO_ID = "heroId"
 
         fun newInstance(actorId: Int): HeroDetailFragment {
             val args = Bundle()
