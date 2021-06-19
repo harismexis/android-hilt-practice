@@ -27,9 +27,9 @@ class HeroDetailFragment : BaseFragment() {
     companion object {
         private const val ARG_HERO_ID = "heroId"
 
-        fun newInstance(actorId: Int): HeroDetailFragment {
+        fun newInstance(heroId: Int): HeroDetailFragment {
             val args = Bundle()
-            args.putInt(ARG_HERO_ID, actorId)
+            args.putInt(ARG_HERO_ID, heroId)
             val fragment = HeroDetailFragment()
             fragment.arguments = args
             return fragment
