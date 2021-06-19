@@ -40,7 +40,7 @@ class HomeScreenTest: InstrumentedTestSetup() {
     @BindValue
     @JvmField
     var mockViewModel : HomeViewModel = mockk(relaxed = true)
-    var fakeHerosResult = MutableLiveData<HerosResult>()
+    private var mockHerosResult = MutableLiveData<HerosResult>()
     private lateinit var mockHeros: List<Hero>
     private lateinit var herosSuccess: HerosResult.Success
 
@@ -108,9 +108,9 @@ class HomeScreenTest: InstrumentedTestSetup() {
         mockHeros = mockData
         herosSuccess = HerosResult.Success(mockHeros)
         every { mockViewModel.fetchHeros() } answers {
-            fakeHerosResult.value = herosSuccess
+            mockHerosResult.value = herosSuccess
         }
-        every { mockViewModel.herosResult } returns fakeHerosResult
+        every { mockViewModel.herosResult } returns mockHerosResult
     }
 
     private fun verifyRecycler(expectedNumberOfItems: Int) {
