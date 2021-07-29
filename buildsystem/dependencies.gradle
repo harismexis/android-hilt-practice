@@ -64,11 +64,6 @@ ext {
             fragment_testing : "androidx.fragment:fragment-testing:$fragment_version"
     ]
 
-    mockkDependencies = [
-            mockk         : "io.mockk:mockk:$mockk",
-            mockk_android : "io.mockk:mockk-android:$mockk_android"
-    ]
-
     testLibraries = [
             junit           : "androidx.test.ext:junit:$androidx_junit",
             coroutines_test : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_android",
