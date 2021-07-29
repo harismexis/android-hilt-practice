@@ -33,8 +33,8 @@ ext {
     def truth = '1.0'
     def mockito_kotlin = '2.2.0'
     def mockito = '3.3.0'
-    def mockk = '1.9.3' //1.10.3-jdk8
-    def mockk_android = '1.9.3' // 1.10.3-jdk8
+    def mockk = '1.12.0'
+    def mockk_android = '1.12.0'
     def google_truth = '0.42'
     def mock_webserver = '4.9.1'
     def retrofit2_adapter_rxjava2 = '2.6.0'
