@@ -69,7 +69,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation libraries.values()
-    implementation rxJavaDependencies.values()
+    //implementation rxJavaDependencies.values()
     implementation navigationDependencies.values()
     debugImplementation librariesDebug.values()
     api glideDependencies.values()
