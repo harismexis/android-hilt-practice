@@ -53,9 +53,9 @@ ext {
     ]
 
     librariesKapt = [
-            room                  : "androidx.room:room-compiler:$room",
+            room_compiler         : "androidx.room:room-compiler:$room",
             hilt_android_compiler : "com.google.dagger:hilt-android-compiler:$hilt_version",
-            glide_compiler          : "com.github.bumptech.glide:compiler:${glide}"
+            glide_compiler        : "com.github.bumptech.glide:compiler:$glide"
     ]
 
     librariesDebug = [
