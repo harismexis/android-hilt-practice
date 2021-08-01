@@ -9,7 +9,7 @@ import com.harismexis.hiltproject.core.repository.HeroLocal
 import com.harismexis.hiltproject.core.repository.HeroRemote
 import com.harismexis.hiltproject.framework.util.event.Event
 import com.harismexis.hiltproject.framework.util.extensions.getErrorMessage
-import com.harismexis.hiltproject.presentation.result.HerosResult
+import com.harismexis.hiltproject.core.result.HerosResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

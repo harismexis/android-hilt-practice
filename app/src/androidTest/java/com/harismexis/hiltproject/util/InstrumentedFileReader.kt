@@ -1,7 +1,7 @@
 package com.harismexis.hiltproject.util
 
 import androidx.test.platform.app.InstrumentationRegistry
-import com.harismexis.hiltproject.parser.BaseFileReader
+import com.harismexis.hiltproject.reader.BaseFileReader
 
 class InstrumentedFileReader: BaseFileReader() {
 

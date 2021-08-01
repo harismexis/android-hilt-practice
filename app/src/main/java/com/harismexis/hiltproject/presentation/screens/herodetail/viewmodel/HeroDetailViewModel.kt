@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.harismexis.hiltproject.core.repository.HeroLocal
 import com.harismexis.hiltproject.framework.util.extensions.getErrorMessage
-import com.harismexis.hiltproject.presentation.result.HeroDetailResult
+import com.harismexis.hiltproject.core.result.HeroDetailResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

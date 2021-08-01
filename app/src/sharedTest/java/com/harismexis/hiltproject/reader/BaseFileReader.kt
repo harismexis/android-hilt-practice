@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.parser
+package com.harismexis.hiltproject.reader
 
 abstract class BaseFileReader {
 

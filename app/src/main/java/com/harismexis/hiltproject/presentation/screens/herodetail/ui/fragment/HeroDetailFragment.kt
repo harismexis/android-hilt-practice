@@ -15,7 +15,7 @@ import com.harismexis.hiltproject.framework.util.extensions.populateWithGlide
 import com.harismexis.hiltproject.framework.util.extensions.setTextOrUnknown
 import com.harismexis.hiltproject.framework.util.extensions.showToast
 import com.harismexis.hiltproject.presentation.base.BaseFragment
-import com.harismexis.hiltproject.presentation.result.HeroDetailResult
+import com.harismexis.hiltproject.core.result.HeroDetailResult
 import com.harismexis.hiltproject.presentation.screens.herodetail.viewmodel.HeroDetailViewModel
 
 class HeroDetailFragment : BaseFragment() {

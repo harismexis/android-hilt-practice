@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.presentation.result
+package com.harismexis.hiltproject.core.result
 
 import com.harismexis.hiltproject.core.domain.Hero
 

@@ -15,7 +15,7 @@ import com.harismexis.hiltproject.framework.util.event.EventObserver
 import com.harismexis.hiltproject.framework.util.extensions.showToast
 import com.harismexis.hiltproject.framework.util.ui.hideKeyboard
 import com.harismexis.hiltproject.presentation.base.BaseFragment
-import com.harismexis.hiltproject.presentation.result.HerosResult
+import com.harismexis.hiltproject.core.result.HerosResult
 import com.harismexis.hiltproject.presentation.screens.home.ui.adapter.HerosAdapter
 import com.harismexis.hiltproject.presentation.screens.home.ui.viewholder.HeroViewHolder
 import com.harismexis.hiltproject.presentation.screens.home.viewmodel.HomeViewModel

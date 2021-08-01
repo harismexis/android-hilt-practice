@@ -1,6 +1,6 @@
 package com.harismexis.hiltproject.utils
 
-import com.harismexis.hiltproject.parser.MockHerosProvider
+import com.harismexis.hiltproject.reader.MockHerosProvider
 import org.junit.Assert
 
 fun <T, P> verifyListsHaveSameSize(

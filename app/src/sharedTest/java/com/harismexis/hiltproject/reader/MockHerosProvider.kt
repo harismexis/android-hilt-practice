@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.parser
+package com.harismexis.hiltproject.reader
 
 import com.harismexis.hiltproject.core.domain.Hero
 import com.harismexis.hiltproject.framework.data.network.model.RemoteHeros
