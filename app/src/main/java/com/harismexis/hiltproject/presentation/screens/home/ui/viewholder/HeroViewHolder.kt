@@ -1,9 +1,9 @@
 package com.harismexis.hiltproject.presentation.screens.home.ui.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
+import com.harismexis.hiltproject.core.domain.Hero
 import com.harismexis.hiltproject.databinding.VhHeroItemBinding
-import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.extensions.populateWithGlide
+import com.harismexis.hiltproject.framework.util.extensions.populateWithGlide
 
 class HeroViewHolder(
     private val binding: VhHeroItemBinding,

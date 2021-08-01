@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.harismexis.hiltproject.datamodel.repository.HeroLocal
-import com.harismexis.hiltproject.framework.extensions.getErrorMessage
+import com.harismexis.hiltproject.core.repository.HeroLocal
+import com.harismexis.hiltproject.framework.util.extensions.getErrorMessage
 import com.harismexis.hiltproject.presentation.result.HeroDetailResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

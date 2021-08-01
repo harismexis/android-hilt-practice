@@ -3,7 +3,7 @@ package com.harismexis.hiltproject.framework.di.api
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.harismexis.hiltproject.BuildConfig
-import com.harismexis.hiltproject.framework.datasource.network.api.RickAndMortyApi
+import com.harismexis.hiltproject.framework.data.network.api.RickAndMortyApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

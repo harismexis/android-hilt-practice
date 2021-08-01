@@ -18,7 +18,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.harismexis.hiltproject.setup.runner.InstrumentedRunner"
+        testInstrumentationRunner "com.harismexis.hiltproject.config.InstrumentedRunner"
         buildConfigField "String", "RICK_AND_MORTY_API_BASE_URL", commonValues.RICK_AND_MORTY_API_BASE_URL
     }
 

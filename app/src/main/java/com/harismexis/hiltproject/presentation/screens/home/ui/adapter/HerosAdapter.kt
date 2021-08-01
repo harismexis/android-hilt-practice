@@ -3,9 +3,9 @@ package com.harismexis.hiltproject.presentation.screens.home.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.harismexis.hiltproject.core.domain.Hero
 import com.harismexis.hiltproject.databinding.VhHeroItemBinding
 import com.harismexis.hiltproject.presentation.screens.home.ui.viewholder.HeroViewHolder
-import com.harismexis.hiltproject.datamodel.domain.Hero
 
 class HerosAdapter(
     private val models: List<Hero>,

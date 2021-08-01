@@ -1,8 +1,8 @@
 package com.harismexis.hiltproject.parser
 
-import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHeros
-import com.harismexis.hiltproject.framework.extensions.hero.toItems
+import com.harismexis.hiltproject.core.domain.Hero
+import com.harismexis.hiltproject.framework.data.network.model.RemoteHeros
+import com.harismexis.hiltproject.framework.util.extensions.hero.toItems
 import com.harismexis.hiltproject.utils.toClassObject
 
 class MockHerosProvider(private val reader: BaseFileReader) {

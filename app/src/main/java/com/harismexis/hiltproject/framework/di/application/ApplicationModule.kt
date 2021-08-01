@@ -1,8 +1,8 @@
 package com.harismexis.hiltproject.framework.di.application
 
 import android.content.Context
-import com.harismexis.hiltproject.framework.datasource.database.RickAndMortyDatabase
-import com.harismexis.hiltproject.framework.datasource.database.data.RickAndMortyLocalDao
+import com.harismexis.hiltproject.framework.data.database.RickAndMortyDatabase
+import com.harismexis.hiltproject.framework.data.database.dao.RickAndMortyLocalDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

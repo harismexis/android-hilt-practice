@@ -10,7 +10,8 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.harismexis.hiltproject.R
-import com.harismexis.hiltproject.datamodel.domain.Hero
+import com.harismexis.hiltproject.base.BaseInstrumentedTest
+import com.harismexis.hiltproject.core.domain.Hero
 import com.harismexis.hiltproject.parser.MockHerosProvider.Companion.EXPECTED_NUM_HEROS_WHEN_3_IDS_INVALID
 import com.harismexis.hiltproject.parser.MockHerosProvider.Companion.EXPECTED_NUM_HEROS_WHEN_6_IDS_INVALID
 import com.harismexis.hiltproject.parser.MockHerosProvider.Companion.EXPECTED_NUM_HEROS_WHEN_ALL_IDS_VALID
@@ -19,9 +20,8 @@ import com.harismexis.hiltproject.parser.MockHerosProvider.Companion.EXPECTED_NU
 import com.harismexis.hiltproject.presentation.result.HerosResult
 import com.harismexis.hiltproject.presentation.screens.home.ui.activity.MainActivity
 import com.harismexis.hiltproject.presentation.screens.home.viewmodel.HomeViewModel
-import com.harismexis.hiltproject.setup.base.BaseInstrumentedTest
-import com.harismexis.hiltproject.setup.testutil.RecyclerCountAssertion
-import com.harismexis.hiltproject.setup.testutil.verifyRecyclerItemAt
+import com.harismexis.hiltproject.util.RecyclerCountAssertion
+import com.harismexis.hiltproject.util.verifyRecyclerItemAt
 import dagger.hilt.android.testing.BindValue
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest

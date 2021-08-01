@@ -10,10 +10,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.harismexis.hiltproject.R
 import com.harismexis.hiltproject.databinding.FragmentHeroDetailBinding
 import com.harismexis.hiltproject.databinding.HeroDetailViewBinding
-import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.extensions.populateWithGlide
-import com.harismexis.hiltproject.framework.extensions.setTextOrUnknown
-import com.harismexis.hiltproject.framework.extensions.showToast
+import com.harismexis.hiltproject.core.domain.Hero
+import com.harismexis.hiltproject.framework.util.extensions.populateWithGlide
+import com.harismexis.hiltproject.framework.util.extensions.setTextOrUnknown
+import com.harismexis.hiltproject.framework.util.extensions.showToast
 import com.harismexis.hiltproject.presentation.base.BaseFragment
 import com.harismexis.hiltproject.presentation.result.HeroDetailResult
 import com.harismexis.hiltproject.presentation.screens.herodetail.viewmodel.HeroDetailViewModel

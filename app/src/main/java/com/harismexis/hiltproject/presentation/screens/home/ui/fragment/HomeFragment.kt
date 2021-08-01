@@ -9,10 +9,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harismexis.hiltproject.R
+import com.harismexis.hiltproject.core.domain.Hero
 import com.harismexis.hiltproject.databinding.FragmentHomeBinding
-import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.event.EventObserver
-import com.harismexis.hiltproject.framework.extensions.showToast
+import com.harismexis.hiltproject.framework.util.event.EventObserver
+import com.harismexis.hiltproject.framework.util.extensions.showToast
 import com.harismexis.hiltproject.framework.util.ui.hideKeyboard
 import com.harismexis.hiltproject.presentation.base.BaseFragment
 import com.harismexis.hiltproject.presentation.result.HerosResult

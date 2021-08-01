@@ -1,9 +1,9 @@
 package com.harismexis.hiltproject.framework.di.application
 
-import com.harismexis.hiltproject.datamodel.repository.HeroLocal
-import com.harismexis.hiltproject.datamodel.repository.HeroRemote
-import com.harismexis.hiltproject.framework.datasource.database.repository.HeroLocalRepository
-import com.harismexis.hiltproject.framework.datasource.network.repository.HeroRemoteRepository
+import com.harismexis.hiltproject.core.repository.HeroLocal
+import com.harismexis.hiltproject.core.repository.HeroRemote
+import com.harismexis.hiltproject.framework.data.database.repository.HeroLocalRepository
+import com.harismexis.hiltproject.framework.data.network.repository.HeroRemoteRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
