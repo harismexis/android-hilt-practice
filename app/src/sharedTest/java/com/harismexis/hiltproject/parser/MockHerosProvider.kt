@@ -1,17 +1,11 @@
 package com.harismexis.hiltproject.parser
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
-import com.google.gson.reflect.TypeToken
 import com.harismexis.hiltproject.datamodel.domain.Hero
-import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHero
 import com.harismexis.hiltproject.framework.datasource.network.model.RemoteHeros
 import com.harismexis.hiltproject.framework.extensions.hero.toItems
-import java.lang.reflect.Type
-import java.util.*
+import com.harismexis.hiltproject.utils.toClassObject
 
-class MockHerosParser(private val parser: BaseFileParser) {
+class MockHerosProvider(private val reader: BaseFileReader) {
 
     companion object {
 
@@ -75,40 +69,27 @@ class MockHerosParser(private val parser: BaseFileParser) {
 
     // raw json string
     private fun getMockDataAllIdsValid(): String =
-        parser.getFileAsString(FILE_10_VALID_HEROS)
+        reader.getFileAsString(FILE_10_VALID_HEROS)
 
     private fun getMockData6IdsInvalid(): String =
-        parser.getFileAsString(FILE_10_HEROS_BUT_6_IDS_INVALID)
+        reader.getFileAsString(FILE_10_HEROS_BUT_6_IDS_INVALID)
 
     private fun getMockData3IdsInvalid(): String =
-        parser.getFileAsString(FILE_10_HEROS_BUT_3_IDS_INVALID)
+        reader.getFileAsString(FILE_10_HEROS_BUT_3_IDS_INVALID)
 
     private fun getMockDataSomeItemsEmpty(): String =
-        parser.getFileAsString(FILE_10_HEROS_BUT_TWO_EMPTY)
+        reader.getFileAsString(FILE_10_HEROS_BUT_TWO_EMPTY)
 
     private fun getMockDataAllIdsInvalid(): String =
-        parser.getFileAsString(FILE_10_HEROS_ALL_IDS_INVALID)
+        reader.getFileAsString(FILE_10_HEROS_ALL_IDS_INVALID)
 
     private fun getMockDataEmptyJsonArray(): String =
-        parser.getFileAsString(FILE_EMPTY_JSON)
+        reader.getFileAsString(FILE_EMPTY_JSON)
 
-    // utils
     private fun getMockRemoteHeros(
         text: String
     ): RemoteHeros {
-        return convertToModel(text)
-    }
-
-    private fun convertToRemoteHeros(jsonFeed: String?): List<RemoteHero> {
-        val gson = GsonBuilder().setLenient().create()
-        val type: Type = object : TypeToken<ArrayList<RemoteHero>>() {}.type
-        return gson.fromJson(jsonFeed, type)
-    }
-
-    inline fun <reified T> convertToModel(jsonString: String?): T {
-        val gson = GsonBuilder().setLenient().create()
-        val json: JsonObject = gson.fromJson(jsonString, JsonObject::class.java)
-        return Gson().fromJson(json, T::class.java)
+        return toClassObject(text)
     }
 
 }

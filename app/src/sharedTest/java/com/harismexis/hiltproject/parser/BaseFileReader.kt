@@ -1,6 +1,6 @@
 package com.harismexis.hiltproject.parser
 
-abstract class BaseFileParser {
+abstract class BaseFileReader {
 
     abstract fun getFileAsString(filePath: String): String
 

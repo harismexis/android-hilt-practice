@@ -1,4 +1,4 @@
-package com.harismexis.hiltproject.testutil
+package com.harismexis.hiltproject.utils
 
 
 import androidx.annotation.VisibleForTesting
